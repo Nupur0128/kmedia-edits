@@ -9,10 +9,6 @@ import {
   Scissors,
   Volume2,
   Film,
-  Video,
-  Copyright,
-  Workflow,
-  CalendarDays,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -87,25 +83,6 @@ const services = [
   {
     name: "YouTube Channel Management",
     path: "/youtube-channel-management",
-  },
-];
-
-const benefits = [
-  {
-    icon: <Copyright size={42} />,
-    title: "Copyright-conscious editing",
-  },
-  {
-    icon: <Clapperboard size={42} />,
-    title: "Motion graphics and dynamic storytelling",
-  },
-  {
-    icon: <Workflow size={42} />,
-    title: "2–4 working day turnaround",
-  },
-  {
-    icon: <CalendarDays size={42} />,
-    title: "Consistent content delivery schedules",
   },
 ];
 

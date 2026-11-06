@@ -8,13 +8,6 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-const links = [
-  { name: "Home", path: "/" },
-  { name: "About", path: "/about" },
-  { name: "Portfolio", path: "/portfolio" },
-  { name: "Contact", path: "/contact" },
-];
-
 const services = [
   {
     name: "Long-Form Video Editing",

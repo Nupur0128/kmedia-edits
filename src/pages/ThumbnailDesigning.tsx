@@ -8,7 +8,6 @@ import {
   Palette,
   MousePointerClick,
   Layers,
-  Play,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
