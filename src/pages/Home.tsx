@@ -6,6 +6,7 @@ import WhyChooseUs from "../sections/WhyChooseUs";
 import Testimonials from "../sections/Testimonials";
 import Process from "../sections/Process";
 import CTA from "../sections/CTA";
+import Clients from "../sections/Clients";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Showreel />
       <Services />
       <WhyChooseUs />
+      <Clients />
       <Testimonials />
       <Process />
       <CTA />
