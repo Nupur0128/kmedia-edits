@@ -59,8 +59,8 @@ export default function Clients() {
         transition={{ duration: 0.7 }}
         className="text-center px-6 mb-14 md:mb-16"
       >
-        <h2 className="font-sans font-extrabold text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
-          Clients we've worked with
+        <h2 className="font-editorial text-5xl sm:text-6xl md:text-7xl lg:text-[90px] leading-[1.02] tracking-tight text-white">
+          Clients we've <span className="text-[#191919]">worked</span> with
         </h2>
       </motion.div>
 

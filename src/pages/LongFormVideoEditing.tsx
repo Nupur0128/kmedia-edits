@@ -614,7 +614,7 @@ export default function LongFormVideoEditing() {
         <div className="max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
             <span className="text-xs tracking-[0.25em] text-brand-red font-bold">
-              WHY K-MEDIA EDITS
+              WHY K-Media Production
             </span>
 
             <h2 className="font-editorial text-4xl md:text-6xl leading-tight mt-6">

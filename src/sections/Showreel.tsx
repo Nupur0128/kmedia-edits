@@ -56,7 +56,7 @@ export default function Showreel() {
 
           <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10">
             <p className="text-white/60 text-[10px] tracking-[0.3em] mb-2">
-              K-MEDIA EDITS · 2026
+              K-Media Production · 2026
             </p>
             <h3 className="font-editorial text-3xl md:text-5xl">
               Stories in Motion.

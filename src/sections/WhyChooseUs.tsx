@@ -165,7 +165,7 @@ export default function WhyChooseUs() {
           <div className="flex flex-col justify-center">
 
             <p className="text-[10px] md:text-xs tracking-[0.2em] font-semibold text-brand-red uppercase mb-5">
-              K-MEDIA EDITS · CREATIVE STUDIO
+              K-Media Production · CREATIVE STUDIO
             </p>
 
             <h3 className="font-editorial text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.08] tracking-tight text-white">

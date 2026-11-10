@@ -132,7 +132,7 @@ export default function Hero() {
                 </div>
 
                 <span className="text-[7px] md:text-[9px] tracking-widest text-white/50">
-                  K-MEDIA EDITS / PREMIERE TIMELINE
+                  K-Media Production / PREMIERE TIMELINE
                 </span>
 
                 <span className="text-[7px] md:text-[9px] text-green-400">
