@@ -12,6 +12,7 @@ import LongFormVideoEditing from "./pages/LongFormVideoEditing";
 import ThumbnailDesigning from "./pages/ThumbnailDesigning";
 import ShortsReelVideoEditing from "./pages/ShortsReelVideoEditing";
 import YouTubeChannelManagement from "./pages/YouTubeChannelManagement";
+import UGCVideoEditing from "./pages/UGCVideoEditing";
 
 function App() {
   return (
@@ -33,7 +34,14 @@ function App() {
             path="/podcast-video-editing"
             element={<PodcastVideoEditing />}
           />
-          <Route path="/thumbnail-designing" element={<ThumbnailDesigning />} />
+          <Route
+            path="/UGC-video-editing"
+            element={<UGCVideoEditing />}
+          />
+          <Route 
+          path="/thumbnail-designing" 
+          element={<ThumbnailDesigning />} 
+          />
           <Route
             path="/short-form-video-editing"
             element={<ShortsReelVideoEditing />}

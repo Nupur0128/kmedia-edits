@@ -12,6 +12,10 @@ const services = [
     path: "/podcast-video-editing",
   },
   {
+    name: "UGC Video Editing",
+    path: "/UGC-video-editing",
+  },
+  {
     name: "Thumbnail Designing",
     path: "/thumbnail-designing",
   },

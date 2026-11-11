@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -25,6 +25,10 @@ const services = [
   {
     name: "Podcast Video Editing",
     path: "/podcast-video-editing",
+  },
+  {
+    name: "UGC Video Editing",
+    path: "/UGC-video-editing",
   },
   {
     name: "Thumbnail Designing",
@@ -96,22 +100,19 @@ const portfolio = [
     title: "Multi-Camera Podcast",
     category: "VIDEO PODCAST",
     duration: "48:20",
-    image:
-      "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=1000&auto=format&fit=crop",
+    videoId: "1f9hjM1PKKV7FkdO_ahHuZePkaIvWdL9p",
   },
   {
     title: "Studio Interview",
     category: "INTERVIEW",
     duration: "32:45",
-    image:
-      "https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=1000&auto=format&fit=crop",
+    videoId: "1Pd_MOsrQlPinomiDd_7HgVyV77en-_pN",
   },
   {
     title: "Creator Conversation",
     category: "CREATOR PODCAST",
     duration: "26:15",
-    image:
-      "https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?w=1000&auto=format&fit=crop",
+    videoId: "1PbibY4I-EEqkah1lT9fFtCRNS2r81D9d",
   },
 ];
 
@@ -201,6 +202,29 @@ const faqs = [
 
 export default function PodcastVideoEditing() {
   const [comparisonPosition, setComparisonPosition] = useState(50);
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
+
+  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
+
+  // Automatically mute other videos when one video is unmuted.
+  useEffect(() => {
+    Object.entries(videoRefs.current).forEach(([videoId, video]) => {
+      if (video && videoId !== activeVideoId && !video.muted) {
+        video.muted = true;
+      }
+    });
+  }, [activeVideoId]);
+
+  const handleVideoVolumeChange = (
+    videoId: string,
+    video: HTMLVideoElement,
+  ) => {
+    if (!video.muted) {
+      setActiveVideoId(videoId);
+    } else if (activeVideoId === videoId) {
+      setActiveVideoId(null);
+    }
+  };
 
   return (
     <main className="bg-brand-white overflow-hidden">
@@ -258,10 +282,9 @@ export default function PodcastVideoEditing() {
               </h1>
 
               <p className="text-base md:text-lg leading-relaxed text-black/60 max-w-xl mt-8">
-                Great conversations deserve great presentation. We transform
-                raw podcast recordings into polished video episodes with
-                seamless camera cuts, clearer audio, captions and professional
-                visuals.
+                Great conversations deserve great presentation. We transform raw
+                podcast recordings into polished video episodes with seamless
+                camera cuts, clearer audio, captions and professional visuals.
               </p>
 
               <div className="flex flex-wrap items-center gap-5 mt-9">
@@ -270,7 +293,6 @@ export default function PodcastVideoEditing() {
                   className="group inline-flex items-center gap-3 bg-brand-red text-white px-7 py-4 rounded-full text-sm font-semibold hover:bg-brand-black transition-colors"
                 >
                   Start Your Podcast
-
                   <ArrowUpRight
                     size={18}
                     className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
@@ -297,8 +319,7 @@ export default function PodcastVideoEditing() {
                   alt="Professionally edited podcast studio"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{
-                    filter:
-                      "saturate(1.35) contrast(1.12) brightness(1.02)",
+                    filter: "saturate(1.35) contrast(1.12) brightness(1.02)",
                   }}
                 />
 
@@ -403,16 +424,16 @@ export default function PodcastVideoEditing() {
 
           <div className="space-y-6 text-black/65 text-base md:text-lg leading-relaxed">
             <p>
-              Recording a podcast is only one part of creating a great show.
-              Raw footage often needs synchronized audio, camera switching,
+              Recording a podcast is only one part of creating a great show. Raw
+              footage often needs synchronized audio, camera switching,
               thoughtful cuts and visual consistency before it is ready to
               publish.
             </p>
 
             <p>
-              That's where K-Media comes in. We take care of the editing
-              process so your conversations become professional, easy-to-watch
-              episodes without losing their natural flow.
+              That's where K-Media comes in. We take care of the editing process
+              so your conversations become professional, easy-to-watch episodes
+              without losing their natural flow.
             </p>
 
             <p>
@@ -557,28 +578,26 @@ export default function PodcastVideoEditing() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {portfolio.map((item, index) => (
               <motion.div
-                key={item.title}
+                key={item.videoId}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
+                className="group min-w-0"
               >
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[22px] bg-black">
-                  <img
-                    src={item.image}
-                    alt={item.title}
+                  <iframe
+                    src={`https://drive.google.com/file/d/${item.videoId}/preview`}
+                    title={item.title}
+                    className="w-full h-full border-0"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
 
-                  <span className="absolute top-4 left-4 bg-brand-black text-white px-4 py-2 text-[10px] tracking-widest">
+                  {/* <span className="absolute top-4 left-4 z-10 bg-brand-black text-white px-4 py-2 text-[10px] tracking-widest pointer-events-none">
                     {item.category}
-                  </span>
-
-                  <div className="absolute bottom-4 right-4 bg-brand-red text-white w-11 h-11 rounded-full flex items-center justify-center">
-                    <Play size={17} fill="currentColor" />
-                  </div>
+                  </span> */}
                 </div>
 
                 <div className="flex items-center justify-between gap-3 mt-5">
@@ -593,11 +612,6 @@ export default function PodcastVideoEditing() {
               </motion.div>
             ))}
           </div>
-
-          <p className="text-xs text-black/40 mt-7">
-            Portfolio cards currently use sample visuals. Replace them with
-            approved K-Media podcast projects before publishing.
-          </p>
         </div>
       </section>
 
@@ -673,10 +687,7 @@ export default function PodcastVideoEditing() {
                 "Branded layouts for social platforms",
               ].map((item) => (
                 <div key={item} className="flex items-center gap-3">
-                  <Check
-                    size={19}
-                    className="text-brand-red shrink-0"
-                  />
+                  <Check size={19} className="text-brand-red shrink-0" />
 
                   <span className="text-sm md:text-base text-black/70">
                     {item}
@@ -828,14 +839,9 @@ export default function PodcastVideoEditing() {
                 key={item}
                 className="flex items-start gap-3 p-5 rounded-xl border border-white/10 bg-white/[0.04]"
               >
-                <Check
-                  size={19}
-                  className="text-brand-red shrink-0 mt-0.5"
-                />
+                <Check size={19} className="text-brand-red shrink-0 mt-0.5" />
 
-                <span className="text-sm leading-6 text-white/80">
-                  {item}
-                </span>
+                <span className="text-sm leading-6 text-white/80">{item}</span>
               </div>
             ))}
           </div>

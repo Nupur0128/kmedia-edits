@@ -8,13 +8,14 @@ import {
   Captions,
   Music2,
   Film,
-  Play,
+  Play
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
   { name: "Long-Form Video Editing", path: "/long-form-video-editing" },
   { name: "Podcast Video Editing", path: "/podcast-video-editing" },
+  { name: "UGC Video Editing", path: "/UGC-video-editing"},
   { name: "Thumbnail Designing", path: "/thumbnail-designing" },
   { name: "Shorts/Reel Video Editing", path: "/short-form-video-editing" },
   { name: "YouTube Channel Management", path: "/youtube-channel-management" },
@@ -22,22 +23,64 @@ const services = [
 
 const portfolio = [
   {
-    title: "Creator & Personal Brand Reels",
+    title: "Creator & Personal Brand Reel",
     category: "CREATOR CONTENT",
-    image:
-      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=1000&auto=format&fit=crop",
+    videoId: "1oKrNAs13IlrEcg8t9ZRvaSuycFcqo23S",
   },
   {
-    title: "Lifestyle & Trending Reels",
+    title: "Lifestyle & Trending Reel",
     category: "LIFESTYLE",
-    image:
-      "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=1000&auto=format&fit=crop",
+    videoId: "1ziNUXa8ZF8IvQ0rphPzk7D8AaGqVXWyI",
   },
   {
-    title: "Product & Promotional Videos",
+    title: "Product Promotional Video",
     category: "BRAND CONTENT",
-    image:
-      "https://images.unsplash.com/photo-1536240478700-b869070f9279?w=1000&auto=format&fit=crop",
+    videoId: "1Q93tHgbw4FehDwj4o1omX0iu-QfMC6Di",
+  },
+  {
+    title: "Podcast Highlights",
+    category: "PODCAST",
+    videoId: "1ikLATtOVLRkujS5mTe2PFfGThVQF6ERi",
+  },
+  {
+    title: "Educational Content",
+    category: "EDUCATIONAL",
+    videoId: "1-bk0r4_3yRIJ9OjAWfwWKZ630JjHdmPn",
+  },
+  {
+    title: "Personal Branding Video",
+    category: "PERSONAL BRAND",
+    videoId: "1SF1E3GBjeckMQgUVy0EHB7ADCN3oISFL",
+  },
+  {
+    title: "Brand Storytelling",
+    category: "BRAND CONTENT",
+    videoId: "1fVSAt2WjV2ueRLM6HccoKy2UdsNsTPiE",
+  },
+  {
+    title: "Social Media Campaign",
+    category: "SOCIAL MEDIA",
+    videoId: "17wevyacOmU0_KCnqYMIvoZ0YQ3WbOV1O",
+  },
+  {
+    title: "Product Showcase",
+    category: "PRODUCT VIDEO",
+    videoId: "1FDqZ_snn_G5HkmJ8X347rN7M7ubbcx7v",
+  },
+  {
+    title: "Creator Collaboration",
+    category: "CREATOR CONTENT",
+    videoId: "1z4ymFKtTfhR7wbrQoBr4t5FRmrmAfdHH",
+  },
+  {
+    title: "Promotional Reel",
+    category: "PROMOTIONAL",
+    videoId: "14zZauIPNw0tLFLyiws8edhEa-OvkGZis",
+  },
+  {
+    title: "Short-Form Video Edit",
+    category: "SHORT-FORM",
+    videoId: "1t6Vu6j2VFldluJGdvlQp8lkRxrNGxqTu",
   },
 ];
 
@@ -137,6 +180,7 @@ const faqs = [
 
 export default function ShortsReelVideoEditing() {
   const [comparisonPosition, setComparisonPosition] = useState(50);
+  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
 
   return (
     <main className="bg-brand-white text-brand-black overflow-hidden">
@@ -230,8 +274,7 @@ export default function ShortsReelVideoEditing() {
                   alt="Professionally edited short-form video"
                   className="absolute inset-0 w-full h-full object-cover"
                   style={{
-                    filter:
-                      "saturate(1.4) contrast(1.15) brightness(1.05)",
+                    filter: "saturate(1.4) contrast(1.15) brightness(1.05)",
                   }}
                 />
 
@@ -340,9 +383,9 @@ export default function ShortsReelVideoEditing() {
             </p>
 
             <p>
-              But a good short video needs more than trimming a longer clip.
-              It needs a clear opening, purposeful pacing, readable captions
-              and visuals that support the message.
+              But a good short video needs more than trimming a longer clip. It
+              needs a clear opening, purposeful pacing, readable captions and
+              visuals that support the message.
             </p>
 
             <p>
@@ -362,9 +405,10 @@ export default function ShortsReelVideoEditing() {
       </section>
 
       {/* OUR WORK / PORTFOLIO */}
-      <section className="bg-[#FFF0F0] px-6 md:px-12 py-20 md:py-28">
+      <section className="bg-[#FFF0F0] px-5 md:px-12 py-20 md:py-28">
         <div className="max-w-[1440px] mx-auto">
-          <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-12">
+          {/* Section Heading */}
+          <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-14">
             <div>
               <span className="text-xs tracking-[0.25em] text-brand-red font-bold">
                 OUR WORK
@@ -379,57 +423,95 @@ export default function ShortsReelVideoEditing() {
               </h2>
             </div>
 
-            <Link
-              to="/portfolio"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-red border-b border-brand-red pb-2 w-fit"
-            >
-              Explore all projects
-              <ArrowUpRight size={17} />
-            </Link>
+            <div className="max-w-sm">
+              <p className="text-sm md:text-base text-black/55 leading-7">
+                A look at the videos we create. Explore our editing style,
+                storytelling and creative approach across different formats.
+              </p>
+
+              <Link
+                to="/portfolio"
+                className="inline-flex items-center gap-2 mt-5 text-sm font-semibold text-brand-red border-b border-brand-red pb-2 w-fit"
+              >
+                Explore all projects
+                <ArrowUpRight size={17} />
+              </Link>
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Video Gallery */}
+          <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
             {portfolio.map((item, index) => (
               <motion.div
-                key={item.title}
+                key={item.videoId}
                 initial={{ opacity: 0, y: 25 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group"
+                viewport={{ once: true, amount: 0.1 }}
+                transition={{ duration: 0.5, delay: (index % 4) * 0.08 }}
+                className="group min-w-0"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-black rounded-[22px]">
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
+                <div className="relative aspect-[9/16] overflow-hidden rounded-2xl bg-brand-black shadow-md group-hover:shadow-xl transition-shadow duration-500">
+                  {activeVideoId === item.videoId ? (
+                    <iframe
+                      src={`https://drive.google.com/file/d/${item.videoId}/preview`}
+                      title={item.title}
+                      className="absolute inset-0 w-full h-full border-0"
+                      allow="autoplay; fullscreen"
+                      allowFullScreen
+                    />
+                  ) : (
+                    <button
+                      type="button"
+                      onClick={() => setActiveVideoId(item.videoId)}
+                      className="absolute inset-0 w-full h-full cursor-pointer"
+                      aria-label={`Play ${item.title}`}
+                    >
+                      <img
+                        src={`https://drive.google.com/thumbnail?id=${item.videoId}&sz=w1000`}
+                        alt={item.title}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
 
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-transparent to-black/10" />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors" />
 
-                  <span className="absolute top-4 left-4 bg-brand-black text-white px-4 py-2 text-[10px] tracking-widest">
-                    {item.category}
-                  </span>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="w-14 h-14 rounded-full bg-brand-red text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                          <Play
+                            size={23}
+                            fill="currentColor"
+                            className="ml-1"
+                          />
+                        </span>
+                      </div>
+                    </button>
+                  )}
 
-                  <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between gap-3">
-                    <h3 className="font-editorial text-2xl md:text-3xl text-white leading-tight">
-                      {item.title}
-                    </h3>
-
-                    <div className="shrink-0 bg-brand-red text-white w-11 h-11 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform">
-                      <Play size={17} fill="currentColor" />
-                    </div>
+                  {/* Project Number */}
+                  <div className="absolute top-3 left-3 z-10 pointer-events-none">
+                    <span className="bg-brand-black/75 backdrop-blur-sm text-white text-[9px] md:text-[10px] font-semibold tracking-widest px-3 py-2 rounded-full">
+                      PROJECT {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <p className="text-xs text-black/40 mt-7">
-            Portfolio visuals are placeholders. Replace them with approved
-            K-Media project thumbnails and video links before publishing.
-          </p>
+          {/* Bottom Note */}
+          <div className="flex flex-col sm:flex-row justify-between gap-3 mt-12 pt-6 border-t border-black/10">
+            <p className="text-xs text-black/45">
+              12 PROJECTS · CREATIVE EDITING · VISUAL STORYTELLING
+            </p>
+
+            <Link
+              to="/contact"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-brand-red hover:text-brand-black transition-colors"
+            >
+              Have a project in mind?
+              <ArrowUpRight size={17} />
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -501,8 +583,8 @@ export default function ShortsReelVideoEditing() {
             </div>
 
             <p className="text-black/55 max-w-md leading-relaxed">
-              One recording can become multiple pieces of content. We help
-              adapt your footage for different short-form formats.
+              One recording can become multiple pieces of content. We help adapt
+              your footage for different short-form formats.
             </p>
           </div>
 
@@ -518,10 +600,7 @@ export default function ShortsReelVideoEditing() {
 
                 <span className="font-semibold">{item}</span>
 
-                <ArrowUpRight
-                  size={17}
-                  className="ml-auto text-black/35"
-                />
+                <ArrowUpRight size={17} className="ml-auto text-black/35" />
               </div>
             ))}
           </div>
@@ -589,8 +668,8 @@ export default function ShortsReelVideoEditing() {
             </h2>
 
             <p className="text-black/55 leading-relaxed mt-7 max-w-lg">
-              We combine creative editing with a structured workflow so you
-              can keep producing content without handling every edit yourself.
+              We combine creative editing with a structured workflow so you can
+              keep producing content without handling every edit yourself.
             </p>
 
             <Link
@@ -615,10 +694,7 @@ export default function ShortsReelVideoEditing() {
                 key={item}
                 className="flex items-start gap-3 p-5 rounded-xl border border-black/10 bg-white"
               >
-                <Check
-                  size={19}
-                  className="text-brand-red shrink-0 mt-0.5"
-                />
+                <Check size={19} className="text-brand-red shrink-0 mt-0.5" />
 
                 <span className="text-sm leading-6">{item}</span>
               </div>
