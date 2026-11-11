@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
@@ -202,18 +202,6 @@ const faqs = [
 
 export default function PodcastVideoEditing() {
   const [comparisonPosition, setComparisonPosition] = useState(50);
-  const [activeVideoId, setActiveVideoId] = useState<string | null>(null);
-
-  const videoRefs = useRef<Record<string, HTMLVideoElement | null>>({});
-
-  // Automatically mute other videos when one video is unmuted.
-  useEffect(() => {
-    Object.entries(videoRefs.current).forEach(([videoId, video]) => {
-      if (video && videoId !== activeVideoId && !video.muted) {
-        video.muted = true;
-      }
-    });
-  }, [activeVideoId]);
 
   return (
     <main className="bg-brand-white overflow-hidden">
