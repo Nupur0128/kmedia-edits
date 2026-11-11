@@ -215,17 +215,6 @@ export default function PodcastVideoEditing() {
     });
   }, [activeVideoId]);
 
-  const handleVideoVolumeChange = (
-    videoId: string,
-    video: HTMLVideoElement,
-  ) => {
-    if (!video.muted) {
-      setActiveVideoId(videoId);
-    } else if (activeVideoId === videoId) {
-      setActiveVideoId(null);
-    }
-  };
-
   return (
     <main className="bg-brand-white overflow-hidden">
       {/* SERVICE NAVIGATION */}
