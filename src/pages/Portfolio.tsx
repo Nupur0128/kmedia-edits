@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Play, ArrowUpRight } from "lucide-react";
+import { X, ArrowUpRight } from "lucide-react";
 
 type Category =
   | "Reels & Shorts"
