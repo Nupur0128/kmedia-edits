@@ -27,7 +27,7 @@ const services = [
     path: "/podcast-video-editing",
   },
   {
-    name: "UGC Video Editing",
+    name: "AI UGC Video Editing",
     path: "/UGC-video-editing",
   },
   {

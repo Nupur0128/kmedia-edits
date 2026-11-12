@@ -14,7 +14,7 @@ import { motion } from "framer-motion";
 const services = [
   { name: "Long-Form Video Editing", path: "/long-form-video-editing" },
   { name: "Podcast Video Editing", path: "/podcast-video-editing" },
-  { name: "UGC Video Editing", path: "/UGC-video-editing"},
+  { name: "AI UGC Video Editing", path: "/UGC-video-editing"},
   { name: "Thumbnail Designing", path: "/thumbnail-designing" },
   { name: "Shorts/Reel Video Editing", path: "/short-form-video-editing" },
   { name: "YouTube Channel Management", path: "/youtube-channel-management" },

@@ -21,7 +21,7 @@ const services = [
     path: "/podcast-video-editing",
   },
   {
-    name: "UGC Video Editing",
+    name: "AI UGC Video Editing",
     path: "/UGC-video-editing",
   },
   {
@@ -49,32 +49,32 @@ const portfolio = [
     id: "ugc-2",
     title: "Unboxing Experience",
     category: "UNBOXING",
-    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
+    videoId: "1WbGoaebET3U8pduZdYka1cQ94qDhO2yx",
   },
   {
     id: "ugc-3",
     title: "Lifestyle Product Video",
     category: "LIFESTYLE UGC",
-    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
+    videoId: "1f05cUgYBHHQHYuYajSdrxy79mg949DYb",
   },
   {
     id: "ugc-4",
     title: "Beauty Product Demonstration",
     category: "PRODUCT DEMO",
-    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
+    videoId: "1xttKgw07MOV9WJ_gZqTJcRIza52e0Fwj",
   },
-  {
-    id: "ugc-5",
-    title: "Customer Experience",
-    category: "TESTIMONIAL",
-    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
-  },
-  {
-    id: "ugc-6",
-    title: "Brand Promotional Creative",
-    category: "UGC AD CREATIVE",
-    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
-  },
+  // {
+  //   id: "ugc-5",
+  //   title: "Customer Experience",
+  //   category: "TESTIMONIAL",
+  //   videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
+  // },
+  // {
+  //   id: "ugc-6",
+  //   title: "Brand Promotional Creative",
+  //   category: "UGC AD CREATIVE",
+  //   videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
+  // },
 ];
 
 const features = [
@@ -145,9 +145,9 @@ const process = [
 
 const faqs = [
   {
-    question: "What is UGC video editing?",
+    question: "What is AI UGC Video Editing?",
     answer:
-      "UGC video editing involves transforming creator-recorded footage into engaging videos for brands. This can include product reviews, unboxing videos, testimonials, demonstrations and promotional ad creatives.",
+      "AI UGC Video Editing involves transforming creator-recorded footage into engaging videos for brands. This can include product reviews, unboxing videos, testimonials, demonstrations and promotional ad creatives.",
   },
   {
     question: "What types of UGC videos do you edit?",
@@ -170,7 +170,7 @@ const faqs = [
       "Yes. Depending on your requirements, we can add captions, background music, sound effects, transitions, product highlights and other visual elements.",
   },
   {
-    question: "How much does UGC video editing cost?",
+    question: "How much does AI UGC Video Editing cost?",
     answer:
       "Pricing depends on the number of videos, footage duration, editing complexity, graphics and delivery requirements. Contact us for a customized quote.",
   },
@@ -214,7 +214,7 @@ export default function UGCVideoEditing() {
       <section className="px-5 pt-7">
         <div className="max-w-7xl mx-auto flex gap-3 justify-center flex-wrap">
           {services.map((service) => {
-            const active = service.name === "UGC Video Editing";
+            const active = service.name === "AI UGC Video Editing";
 
             return (
               <Link
@@ -249,7 +249,7 @@ export default function UGCVideoEditing() {
                 </span>
 
                 <span className="text-xs tracking-[0.3em] text-black/50">
-                  OUR SERVICES / UGC VIDEO EDITING
+                  OUR SERVICES / AI UGC Video Editing
                 </span>
               </div>
 

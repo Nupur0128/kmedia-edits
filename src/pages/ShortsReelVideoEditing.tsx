@@ -8,20 +8,30 @@ import {
   Captions,
   Music2,
   Film,
-  Play
+  Play,
 } from "lucide-react";
 import { motion } from "framer-motion";
 
 const services = [
   { name: "Long-Form Video Editing", path: "/long-form-video-editing" },
   { name: "Podcast Video Editing", path: "/podcast-video-editing" },
-  { name: "UGC Video Editing", path: "/UGC-video-editing"},
+  { name: "AI UGC Video Editing", path: "/UGC-video-editing" },
   { name: "Thumbnail Designing", path: "/thumbnail-designing" },
   { name: "Shorts/Reel Video Editing", path: "/short-form-video-editing" },
   { name: "YouTube Channel Management", path: "/youtube-channel-management" },
 ];
 
 const portfolio = [
+  {
+    title: "Educational Content",
+    category: "EDUCATIONAL",
+    videoId: "1-bk0r4_3yRIJ9OjAWfwWKZ630JjHdmPn",
+  },
+  {
+    title: "Social Media Campaign",
+    category: "SOCIAL MEDIA",
+    videoId: "17wevyacOmU0_KCnqYMIvoZ0YQ3WbOV1O",
+  },
   {
     title: "Creator & Personal Brand Reel",
     category: "CREATOR CONTENT",
@@ -38,16 +48,6 @@ const portfolio = [
     videoId: "1Q93tHgbw4FehDwj4o1omX0iu-QfMC6Di",
   },
   {
-    title: "Podcast Highlights",
-    category: "PODCAST",
-    videoId: "1ikLATtOVLRkujS5mTe2PFfGThVQF6ERi",
-  },
-  {
-    title: "Educational Content",
-    category: "EDUCATIONAL",
-    videoId: "1-bk0r4_3yRIJ9OjAWfwWKZ630JjHdmPn",
-  },
-  {
     title: "Personal Branding Video",
     category: "PERSONAL BRAND",
     videoId: "1SF1E3GBjeckMQgUVy0EHB7ADCN3oISFL",
@@ -58,19 +58,9 @@ const portfolio = [
     videoId: "1fVSAt2WjV2ueRLM6HccoKy2UdsNsTPiE",
   },
   {
-    title: "Social Media Campaign",
-    category: "SOCIAL MEDIA",
-    videoId: "17wevyacOmU0_KCnqYMIvoZ0YQ3WbOV1O",
-  },
-  {
     title: "Product Showcase",
     category: "PRODUCT VIDEO",
     videoId: "1FDqZ_snn_G5HkmJ8X347rN7M7ubbcx7v",
-  },
-  {
-    title: "Creator Collaboration",
-    category: "CREATOR CONTENT",
-    videoId: "1z4ymFKtTfhR7wbrQoBr4t5FRmrmAfdHH",
   },
   {
     title: "Promotional Reel",

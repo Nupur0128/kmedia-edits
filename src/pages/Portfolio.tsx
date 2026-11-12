@@ -1,4 +1,3 @@
-
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Play, ArrowUpRight } from "lucide-react";
@@ -21,7 +20,7 @@ type Project = {
   duration: string;
   image: string;
   shape: "portrait" | "square" | "landscape";
-  videoUrl?: string;
+  videoId?: string;
 };
 
 const categories = [
@@ -37,149 +36,180 @@ const categories = [
 ];
 
 const projects: Project[] = [
+  // ================= UGC VIDEOS =================
   {
     id: 1,
-    title: "Pulse – Fitness Reel",
-    category: "Reels & Shorts",
-    format: "REEL",
-    duration: "0:45",
-    image: "/images/pic1.jpg",
+    title: "Product Review Video",
+    category: "UGC",
+    format: "PRODUCT REVIEW",
+    duration: "UGC",
+    image: "",
     shape: "portrait",
+    videoId: "1tB8j9r32u6rvFPLE1IVxtOBJTboaZKzJ",
   },
   {
     id: 2,
-    title: "Taste & Fire",
-    category: "Reels & Shorts",
-    format: "REEL",
-    duration: "0:38",
-    image: "/images/pic2.jpg",
-    shape: "portrait",
+    title: "Unboxing Experience",
+    category: "UGC",
+    format: "UNBOXING",
+    duration: "UGC",
+    image: "",
+    shape: "square",
+    videoId: "1WbGoaebET3U8pduZdYka1cQ94qDhO2yx",
   },
   {
     id: 3,
-    title: "Runway Red",
-    category: "Reels & Shorts",
-    format: "REEL",
-    duration: "0:52",
-    image: "/images/pic2.jpg",
-    shape: "portrait",
+    title: "Lifestyle Product Video",
+    category: "UGC",
+    format: "LIFESTYLE UGC",
+    duration: "UGC",
+    image: "",
+    shape: "landscape",
+    videoId: "1f05cUgYBHHQHYuYajSdrxy79mg949DYb",
   },
   {
     id: 4,
-    title: "Neon Rain",
-    category: "Cinematic Shoots",
-    format: "CINEMATIC SHORT",
-    duration: "3:12",
-    image: "/images/pic1.jpg",
-    shape: "landscape",
+    title: "Beauty Product Demonstration",
+    category: "UGC",
+    format: "PRODUCT DEMO",
+    duration: "UGC",
+    image: "",
+    shape: "portrait",
+    videoId: "1xttKgw07MOV9WJ_gZqTJcRIza52e0Fwj",
   },
+
+  // ================= REELS & SHORTS =================
   {
     id: 5,
-    title: "Atelier Product Story",
-    category: "Photography",
-    format: "PRODUCT SHOOT",
-    duration: "24 FRAMES",
-    image: "/images/pic2.jpg",
+    title: "Educational Content",
+    category: "Reels & Shorts",
+    format: "EDUCATIONAL",
+    duration: "SHORT-FORM",
+    image: "",
     shape: "square",
+    videoId: "1-bk0r4_3yRIJ9OjAWfwWKZ630JjHdmPn",
   },
   {
     id: 6,
-    title: "The Long Road",
-    category: "YouTube Videos",
-    format: "DOCUMENTARY",
-    duration: "12:24",
-    image: "/images/pic1.jpg",
-    shape: "landscape",
+    title: "Social Media Campaign",
+    category: "Reels & Shorts",
+    format: "SOCIAL MEDIA",
+    duration: "SHORT-FORM",
+    image: "",
+    shape: "portrait",
+    videoId: "17wevyacOmU0_KCnqYMIvoZ0YQ3WbOV1O",
   },
   {
     id: 7,
-    title: "Deep Cuts Podcast",
-    category: "Podcasts",
-    format: "PODCAST EDIT",
-    duration: "42:10",
-    image: "/images/pic2.jpg",
+    title: "Creator & Personal Brand Reel",
+    category: "Reels & Shorts",
+    format: "CREATOR CONTENT",
+    duration: "SHORT-FORM",
+    image: "",
     shape: "landscape",
+    videoId: "1oKrNAs13IlrEcg8t9ZRvaSuycFcqo23S",
   },
   {
     id: 8,
-    title: "Coastline Cruise",
-    category: "Cinematic Shoots",
-    format: "DRONE FILM",
-    duration: "2:35",
-    image: "/images/pic1.jpg",
-    shape: "landscape",
+    title: "Lifestyle & Trending Reel",
+    category: "Reels & Shorts",
+    format: "LIFESTYLE",
+    duration: "SHORT-FORM",
+    image: "",
+    shape: "square",
+    videoId: "1ziNUXa8ZF8IvQ0rphPzk7D8AaGqVXWyI",
   },
   {
     id: 9,
-    title: "Creator Gear Guide",
-    category: "YouTube Videos",
-    format: "LONG-FORM",
-    duration: "12:47",
-    image: "/images/pic1.jpg",
-    shape: "landscape",
+    title: "Product Promotional Video",
+    category: "Reels & Shorts",
+    format: "BRAND CONTENT",
+    duration: "SHORT-FORM",
+    image: "",
+    shape: "portrait",
+    videoId: "1Q93tHgbw4FehDwj4o1omX0iu-QfMC6Di",
   },
   {
     id: 10,
-    title: "Velora Rouge",
-    category: "Brand Ads",
-    format: "BRAND FILM",
-    duration: "1:38",
-    image: "/images/pic2.jpg",
+    title: "Personal Branding Video",
+    category: "Reels & Shorts",
+    format: "PERSONAL BRAND",
+    duration: "SHORT-FORM",
+    image: "",
     shape: "landscape",
+    videoId: "1SF1E3GBjeckMQgUVy0EHB7ADCN3oISFL",
   },
   {
     id: 11,
-    title: "Morning Routine",
-    category: "UGC",
-    format: "UGC AD",
-    duration: "0:34",
-    image: "/images/pic1.jpg",
-    shape: "portrait",
+    title: "Brand Storytelling",
+    category: "Reels & Shorts",
+    format: "BRAND CONTENT",
+    duration: "SHORT-FORM",
+    image: "",
+    shape: "square",
+    videoId: "1fVSAt2WjV2ueRLM6HccoKy2UdsNsTPiE",
   },
   {
     id: 12,
-    title: "Dream Frames",
-    category: "AI Edits",
-    format: "AI SEQUENCE",
-    duration: "0:55",
-    image: "/images/pic1.jpg",
-    shape: "landscape",
-  },
-  {
-    id: 10,
-    title: "Creator Gear Guide",
-    category: "YouTube Videos",
-    format: "LONG-FORM",
-    duration: "12:47",
-    image: "/images/pic2.jpg",
+    title: "Product Showcase",
+    category: "Reels & Shorts",
+    format: "PRODUCT VIDEO",
+    duration: "SHORT-FORM",
+    image: "",
     shape: "portrait",
-  },
-  {
-    id: 11,
-    title: "Velora Rouge",
-    category: "Brand Ads",
-    format: "BRAND FILM",
-    duration: "1:38",
-    image: "/images/pic2.jpg",
-    shape: "landscape",
-  },
-  {
-    id: 12,
-    title: "Morning Routine",
-    category: "UGC",
-    format: "UGC AD",
-    duration: "0:34",
-    image: "/images/pic1.jpg",
-    shape: "portrait",
+    videoId: "1FDqZ_snn_G5HkmJ8X347rN7M7ubbcx7v",
   },
   {
     id: 13,
-    title: "Dream Frames",
-    category: "AI Edits",
-    format: "AI SEQUENCE",
-    duration: "0:55",
-    image: "/images/pic2.jpg",
+    title: "Promotional Reel",
+    category: "Reels & Shorts",
+    format: "PROMOTIONAL",
+    duration: "SHORT-FORM",
+    image: "",
     shape: "landscape",
+    videoId: "14zZauIPNw0tLFLyiws8edhEa-OvkGZis",
+  },
+  {
+    id: 14,
+    title: "Short-Form Video Edit",
+    category: "Reels & Shorts",
+    format: "SHORT-FORM",
+    duration: "SHORT-FORM",
+    image: "",
+    shape: "square",
+    videoId: "1t6Vu6j2VFldluJGdvlQp8lkRxrNGxqTu",
+  },
+
+  // ================= PODCAST VIDEOS =================
+  {
+    id: 15,
+    title: "Multi-Camera Podcast",
+    category: "Podcasts",
+    format: "VIDEO PODCAST",
+    duration: "48:20",
+    image: "",
+    shape: "landscape",
+    videoId: "1f9hjM1PKKV7FkdO_ahHuZePkaIvWdL9p",
+  },
+  {
+    id: 16,
+    title: "Studio Interview",
+    category: "Podcasts",
+    format: "INTERVIEW",
+    duration: "32:45",
+    image: "",
+    shape: "portrait",
+    videoId: "1Pd_MOsrQlPinomiDd_7HgVyV77en-_pN",
+  },
+  {
+    id: 17,
+    title: "Creator Conversation",
+    category: "Podcasts",
+    format: "CREATOR PODCAST",
+    duration: "26:15",
+    image: "",
+    shape: "square",
+    videoId: "1PbibY4I-EEqkah1lT9fFtCRNS2r81D9d",
   },
 ];
 
@@ -191,24 +221,32 @@ const imageShapes = {
 
 export default function Portfolio() {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [selectedProject, setSelectedProject] =
-    useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  // Randomize the portfolio order once when the component mounts.
+  const shuffledProjects = useMemo(() => {
+    const shuffled = [...projects];
+
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+
+    return shuffled;
+  }, []);
 
   const filteredProjects = useMemo(() => {
-    if (activeCategory === "All") return projects;
+    if (activeCategory === "All") return shuffledProjects;
 
-    return projects.filter(
-      (project) => project.category === activeCategory
+    return shuffledProjects.filter(
+      (project) => project.category === activeCategory,
     );
-  }, [activeCategory]);
-
+  }, [activeCategory, shuffledProjects]);
   return (
     <main className="min-h-screen bg-[#F8F7F3] text-[#111111]">
-
       {/* HERO */}
       <section className="px-6 md:px-12 lg:px-20 pt-24 md:pt-12 pb-8">
         <div className="max-w-[1600px] mx-auto">
-
           <motion.p
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -225,7 +263,9 @@ export default function Portfolio() {
             className="font-editorial text-6xl sm:text-7xl md:text-8xl lg:text-[120px] leading-[0.95] tracking-[-0.055em] max-w-[1200px]"
           >
             Selected Work.{" "}
-            <span className="font-editorial-italic text-brand-red">Unfiltered</span>
+            <span className="font-editorial-italic text-brand-red">
+              Unfiltered
+            </span>
             <br />
             Creativity.
           </motion.h1>
@@ -236,20 +276,16 @@ export default function Portfolio() {
             transition={{ duration: 0.7, delay: 0.2 }}
             className="text-sm md:text-lg text-black/60 leading-7 max-w-xl mt-10"
           >
-            {filteredProjects.length} projects across every format we
-            create. Click any frame to preview.
+            {filteredProjects.length} projects across every format we create.
+            Click any frame to preview.
           </motion.p>
-
         </div>
       </section>
 
       {/* CATEGORY FILTERS */}
       <section className="sticky top-0 z-30 bg-[#F8F7F3]/95 backdrop-blur-md border-y border-black/15">
-
         <div className="max-w-[1600px] mx-auto px-5 md:px-12 lg:px-20">
-
           <div className="flex items-center gap-2 overflow-x-auto py-4 portfolio-scrollbar">
-
             {categories.map((category) => (
               <button
                 key={category}
@@ -263,16 +299,13 @@ export default function Portfolio() {
                 {category}
               </button>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* ASYMMETRICAL MASONRY PORTFOLIO */}
       <section className="px-5 md:px-12 lg:px-20 py-12 md:py-16">
-
         <div className="max-w-[1600px] mx-auto">
-
           <motion.div
             layout
             className="
@@ -284,12 +317,9 @@ export default function Portfolio() {
               md:gap-6
             "
           >
-
             <AnimatePresence mode="popLayout">
-
               {filteredProjects.map((project, index) => (
-
-                <motion.button
+                <motion.div
                   layout
                   key={project.id}
                   initial={{ opacity: 0, y: 25 }}
@@ -300,103 +330,54 @@ export default function Portfolio() {
                     delay: index * 0.04,
                   }}
                   onClick={() => setSelectedProject(project)}
-                  className="
-                    w-full
-                    text-left
-                    mb-7
-                    break-inside-avoid
-                    block
-                    group
-                    cursor-pointer
-                  "
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      setSelectedProject(project);
+                    }
+                  }}
+                  className="w-full text-left mb-7 break-inside-avoid block group cursor-pointer"
                 >
-
-                  {/* IMAGE */}
                   <div
-                    className={`relative w-full overflow-hidden bg-[#E9E6E0] ${imageShapes[project.shape]}`}
+                    className={`relative w-full overflow-hidden bg-[#171717] ${imageShapes[project.shape]}`}
                   >
+                    {project.videoId ? (
+                      <iframe
+                        src={`https://drive.google.com/file/d/${project.videoId}/preview`}
+                        title={project.title}
+                        className="absolute inset-0 w-full h-full border-0"
+                        allow="autoplay; fullscreen"
+                        allowFullScreen
+                        loading="lazy"
+                      />
+                    ) : (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        className="absolute inset-0 w-full h-full object-cover"
+                      />
+                    )}
 
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      loading="lazy"
-                      onError={(e) => {
-                        e.currentTarget.style.opacity = "0";
-                      }}
-                      className="
-                        absolute inset-0
-                        w-full h-full
-                        object-cover
-                        transition-transform
-                        duration-700
-                        ease-out
-                        group-hover:scale-105
-                      "
-                    />
-
-                    {/* CATEGORY LABEL */}
-                    <div className="
-                      absolute top-3 left-3
-                      bg-[#111111]/90
-                      text-white
-                      px-3 py-2
-                      text-[8px] md:text-[10px]
-                      tracking-[0.18em]
-                      uppercase
-                      z-10
-                    ">
+                    <div className="absolute top-3 left-3 bg-[#111111]/90 text-white px-3 py-2 text-[8px] md:text-[10px] tracking-[0.18em] uppercase z-10 pointer-events-none">
                       {project.category}
                     </div>
-
-                    {/* HOVER OVERLAY */}
-                    <div className="
-                      absolute inset-0
-                      bg-black/0
-                      group-hover:bg-black/35
-                      transition-all duration-500
-                      flex items-center justify-center
-                    ">
-
-                      <div className="
-                        w-12 h-12
-                        rounded-full
-                        bg-white
-                        text-black
-                        flex items-center justify-center
-                        opacity-0
-                        scale-75
-                        group-hover:opacity-100
-                        group-hover:scale-100
-                        transition-all duration-300
-                      ">
-                        <Play size={18} fill="currentColor" />
-                      </div>
-
-                    </div>
-
                   </div>
 
-                  {/* PROJECT DETAILS */}
                   <div className="flex items-start justify-between gap-2 mt-3">
-
                     <h3 className="font-editorial text-lg md:text-xl leading-tight">
                       {project.title}
                     </h3>
 
                     <ArrowUpRight
                       size={15}
-                      className="
-                        flex-shrink-0 mt-1
-                        text-black/40
-                        group-hover:text-brand-red
-                        transition-colors
-                      "
+                      className="flex-shrink-0 mt-1 text-black/40 group-hover:text-brand-red transition-colors"
                     />
-
                   </div>
 
                   <div className="flex items-center justify-between gap-2 mt-2">
-
                     <span className="text-[8px] md:text-[9px] tracking-[0.15em] text-black/45 uppercase">
                       {project.format}
                     </span>
@@ -404,15 +385,10 @@ export default function Portfolio() {
                     <span className="text-[8px] md:text-[9px] tracking-wider text-black/45">
                       {project.duration}
                     </span>
-
                   </div>
-
-                </motion.button>
-
+                </motion.div>
               ))}
-
             </AnimatePresence>
-
           </motion.div>
 
           {filteredProjects.length === 0 && (
@@ -420,15 +396,12 @@ export default function Portfolio() {
               No projects found in this category.
             </p>
           )}
-
         </div>
       </section>
 
       {/* PROJECT PREVIEW MODAL */}
       <AnimatePresence>
-
         {selectedProject && (
-
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -441,7 +414,6 @@ export default function Portfolio() {
               p-5 md:p-12
             "
           >
-
             <button
               onClick={() => setSelectedProject(null)}
               aria-label="Close preview"
@@ -463,21 +435,27 @@ export default function Portfolio() {
               onClick={(e) => e.stopPropagation()}
               className="max-w-5xl w-full max-h-[90vh] overflow-y-auto"
             >
-
-              <div className="bg-[#171717]">
-
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full max-h-[70vh] object-contain"
-                />
-
+              <div className="bg-[#171717] w-full aspect-video">
+                {selectedProject.videoId ? (
+                  <iframe
+                    key={selectedProject.id}
+                    src={`https://drive.google.com/file/d/${selectedProject.videoId}/preview`}
+                    title={selectedProject.title}
+                    className="w-full h-full border-0"
+                    allow="autoplay; fullscreen"
+                    allowFullScreen
+                  />
+                ) : (
+                  <img
+                    src={selectedProject.image}
+                    alt={selectedProject.title}
+                    className="w-full h-full object-contain"
+                  />
+                )}
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-4 text-white pt-6">
-
                 <div>
-
                   <p className="text-[10px] tracking-[0.25em] text-white/50 uppercase mb-2">
                     {selectedProject.category}
                   </p>
@@ -485,23 +463,16 @@ export default function Portfolio() {
                   <h2 className="font-editorial text-3xl md:text-5xl">
                     {selectedProject.title}
                   </h2>
-
                 </div>
 
                 <p className="text-xs tracking-widest text-white/60">
                   {selectedProject.format} · {selectedProject.duration}
                 </p>
-
               </div>
-
             </motion.div>
-
           </motion.div>
-
         )}
-
       </AnimatePresence>
-
     </main>
   );
 }

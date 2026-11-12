@@ -5,34 +5,49 @@ import { motion } from "framer-motion";
 
 const clients = [
   {
-    name: "NOT SO DAILY",
+    name: "OBSERVER",
     subscribers: "198k Subscribers",
-    logo: "/images/clients/not-so-daily.png",
+    logo: "/images/clientlogo1.jpeg",
   },
   {
-    name: "The Founder's Dream",
+    name: "CANAM STUDYABROAD",
     subscribers: "282k Subscribers",
-    logo: "/images/clients/founders-dream.png",
+    logo: "/images/clientlogo2.png",
   },
   {
-    name: "Galaxy Geeks",
+    name: "OWLED",
     subscribers: "687k Subscribers",
-    logo: "/images/clients/galaxy-geeks.png",
+    logo: "/images/clientlogo3.jpeg",
   },
   {
-    name: "Reelin' with Asia & BJ",
+    name: "GOSOURCE",
     subscribers: "298k Subscribers",
-    logo: "/images/clients/reelin-asia.png",
+    logo: "/images/clientlogo4.png",
+  },
+  {
+    name: "BREW MEDIA",
+    subscribers: "2.49M Subscribers",
+    logo: "/images/clientlogo5.jpeg",
+  },
+  {
+    name: "ASTU",
+    subscribers: "150k Subscribers",
+    logo: "/images/clientlogo6.png",
+  },
+  {
+    name: "JOSH TALK",
+    subscribers: "298k Subscribers",
+    logo: "/images/clientlogo7.jpeg",
   },
   {
     name: "CineDesi",
     subscribers: "2.49M Subscribers",
-    logo: "/images/clients/cinedesi.png",
+    logo: "/images/clientlogo8.jpeg",
   },
   {
-    name: "Creative Studio",
+    name: "ZEAL SPARROW",
     subscribers: "150k Subscribers",
-    logo: "/images/clients/creative-studio.png",
+    logo: "/images/clientlogo9.png",
   },
 ];
 
@@ -50,11 +65,10 @@ export default function Clients() {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-r from-[#A9002D] via-[#C00024] to-[#ED001B] py-20 md:py-28">
-
       {/* Heading */}
       <motion.div
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.7 }}
         className="text-center px-6 mb-14 md:mb-16"
@@ -64,10 +78,10 @@ export default function Clients() {
         </h2>
       </motion.div>
 
-      {/* Slider wrapper */}
+      {/* Slider Wrapper */}
       <div className="relative max-w-[1600px] mx-auto px-12 md:px-20">
 
-        {/* Left arrow */}
+        {/* Left Arrow */}
         <button
           onClick={() => scroll("left")}
           aria-label="Previous clients"
@@ -76,10 +90,10 @@ export default function Clients() {
           <ChevronLeft size={65} strokeWidth={1.5} />
         </button>
 
-        {/* Client cards */}
+        {/* Client Cards Slider */}
         <div
           ref={sliderRef}
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-5 md:gap-8"
+          className="flex overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth gap-5 md:gap-8 py-5"
           style={{
             scrollbarWidth: "none",
             msOverflowStyle: "none",
@@ -87,25 +101,26 @@ export default function Clients() {
         >
           {clients.map((client, index) => (
             <motion.div
-              key={client.name}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              key={`${client.name}-${index}`}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
+              transition={{ duration: 0.5, delay: index * 0.05 }}
               className="flex-shrink-0 w-[75%] sm:w-[45%] md:w-[28%] lg:w-[18%] snap-center text-center group"
             >
-              {/* Circular logo */}
-              <div className="mx-auto w-36 h-36 sm:w-40 sm:h-40 md:w-44 md:h-44 rounded-full overflow-hidden border-2 border-white/80 bg-black flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+              {/* Client Logo */}
+              <div className="mx-auto w-36 h-36 sm:w-40 sm:h-40 md:w-32 md:h-32 rounded-full overflow-hidden border-2 border-white/80 bg-white flex items-center justify-center p-5 group-hover:scale-105 transition-transform duration-500">
                 <img
                   src={client.logo}
-                  alt={client.name}
+                  alt={`${client.name} logo`}
                   loading="lazy"
-                  className="w-full h-full object-cover"
+                  draggable={false}
+                  className="w-full h-full object-contain"
                 />
               </div>
 
-              {/* Client name */}
-              <h3 className="text-white font-bold text-base md:text-lg mt-8 mb-5 truncate px-2">
+              {/* Client Name */}
+              <h3 className="text-white font-bold text-base md:text-lg mt-8 mb-2 truncate px-2">
                 {client.name}
               </h3>
 
@@ -117,7 +132,7 @@ export default function Clients() {
           ))}
         </div>
 
-        {/* Right arrow */}
+        {/* Right Arrow */}
         <button
           onClick={() => scroll("right")}
           aria-label="Next clients"
@@ -125,9 +140,7 @@ export default function Clients() {
         >
           <ChevronRight size={65} strokeWidth={1.5} />
         </button>
-
       </div>
-
     </section>
   );
 }

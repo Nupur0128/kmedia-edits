@@ -12,7 +12,7 @@ const services = [
     path: "/podcast-video-editing",
   },
   {
-    name: "UGC Video Editing",
+    name: "AI UGC Video Editing",
     path: "/UGC-video-editing",
   },
   {
@@ -57,12 +57,13 @@ export default function Navbar() {
         <Link
           to="/"
           onClick={closeMobileMenu}
-          className="leading-none shrink-0"
+          className="shrink-0 flex items-center"
         >
-          <span className="text-2xl font-bold tracking-tight">
-            K-MEDIA<span className="text-brand-red">.</span>
-          </span>
-          <span className="block text-[9px] tracking-[0.3em] mt-1">PRODUCTION</span>
+          <img
+            src="/images/productionlogo2.png"
+            alt="K-Media Production"
+            className="w-auto h-12 md:h-40 object-contain"
+          />
         </Link>
 
         {/* Desktop Navigation */}

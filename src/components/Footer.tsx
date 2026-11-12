@@ -1,6 +1,11 @@
-
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Mail, Phone } from "lucide-react";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaFacebookF,
+  FaLinkedinIn,
+} from "react-icons/fa";
 
 const services = [
   {
@@ -12,7 +17,7 @@ const services = [
     path: "/podcast-video-editing",
   },
   {
-    name: "UGC Video Editing",
+    name: "AI UGC Video Editing",
     path: "/UGC-video-editing",
   },
   {
@@ -32,22 +37,22 @@ const services = [
 const socialLinks = [
   {
     name: "Instagram",
-    short: "IG",
+    icon: FaInstagram,
     url: "https://www.instagram.com/",
   },
   {
     name: "YouTube",
-    short: "YT",
+    icon: FaYoutube,
     url: "https://www.youtube.com/",
   },
   {
     name: "Facebook",
-    short: "FB",
+    icon: FaFacebookF,
     url: "https://www.facebook.com/",
   },
   {
     name: "LinkedIn",
-    short: "in",
+    icon: FaLinkedinIn,
     url: "https://www.linkedin.com/",
   },
 ];
@@ -56,25 +61,22 @@ export default function Footer() {
   return (
     <footer className="bg-brand-black text-white px-6 md:px-12 pt-16 pb-8">
       <div className="max-w-[1440px] mx-auto">
-
         {/* Top Footer */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
-
           {/* Brand Information */}
           <div className="lg:col-span-4">
-            <Link to="/" className="inline-block">
-              <h2 className="text-3xl font-bold tracking-tight">
-                K-MEDIA<span className="text-brand-red">.</span>
-              </h2>
-              <p className="text-[9px] tracking-[0.35em] mt-1 text-white/60">
-                PRODUCTION
-              </p>
+            <Link to="/" className="inline-flex items-center">
+              <img
+                src="/images/productionlogo2.png"
+                alt="K-Media Production"
+                className="w-auto h-14 md:h-40 object-contain"
+              />
             </Link>
 
-            <p className="text-sm text-white/55 leading-7 mt-6 max-w-sm">
-              We turn raw footage into powerful visual stories.
-              From video editing to complete channel management,
-              we help brands and creators make every frame count.
+            <p className="text-sm text-white/55 leading-7 mt-0 max-w-sm">
+              We turn raw footage into powerful visual stories. From video
+              editing to complete channel management, we help brands and
+              creators make every frame count.
             </p>
 
             <Link
@@ -93,19 +95,34 @@ export default function Footer() {
             </h3>
 
             <div className="flex flex-col gap-4 text-sm text-white/75">
-              <Link to="/" className="hover:text-brand-red transition-colors w-fit">
+              <Link
+                to="/"
+                className="hover:text-brand-red transition-colors w-fit"
+              >
                 Home
               </Link>
-              <Link to="/about" className="hover:text-brand-red transition-colors w-fit">
+              <Link
+                to="/about"
+                className="hover:text-brand-red transition-colors w-fit"
+              >
                 About Us
               </Link>
-              <Link to="/services" className="hover:text-brand-red transition-colors w-fit">
+              <Link
+                to="/services"
+                className="hover:text-brand-red transition-colors w-fit"
+              >
                 Services
               </Link>
-              <Link to="/portfolio" className="hover:text-brand-red transition-colors w-fit">
+              <Link
+                to="/portfolio"
+                className="hover:text-brand-red transition-colors w-fit"
+              >
                 Portfolio
               </Link>
-              <Link to="/contact" className="hover:text-brand-red transition-colors w-fit">
+              <Link
+                to="/contact"
+                className="hover:text-brand-red transition-colors w-fit"
+              >
                 Contact
               </Link>
             </div>
@@ -137,19 +154,23 @@ export default function Footer() {
             </h3>
 
             <div className="flex items-center gap-3">
-              {socialLinks.map((social) => (
-                <a
-                  key={social.name}
-                  href={social.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Follow us on ${social.name}`}
-                  title={social.name}
-                  className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-xs font-semibold text-white/80 hover:bg-brand-red hover:border-brand-red hover:text-white transition-all duration-300"
-                >
-                  {social.short}
-                </a>
-              ))}
+              {socialLinks.map((social) => {
+                const Icon = social.icon;
+
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Follow us on ${social.name}`}
+                    title={social.name}
+                    className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-white/80 hover:bg-brand-red hover:border-brand-red hover:text-white hover:scale-110 transition-all duration-300"
+                  >
+                    <Icon size={19} />
+                  </a>
+                );
+              })}
             </div>
 
             <h3 className="text-xs uppercase tracking-[0.25em] text-white/45 mt-10 mb-5">
@@ -179,9 +200,9 @@ export default function Footer() {
         {/* Bottom Footer */}
         <div className="border-t border-white/15 pt-7">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-5">
-
             <p className="text-xs text-white/45">
-              © {new Date().getFullYear()} K-Media Production. All rights reserved.
+              © {new Date().getFullYear()} K-Media Production. All rights
+              reserved.
             </p>
 
             <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-xs text-white/55">
@@ -206,7 +227,6 @@ export default function Footer() {
             </p>
           </div>
         </div>
-
       </div>
     </footer>
   );
