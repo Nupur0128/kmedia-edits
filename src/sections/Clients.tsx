@@ -6,47 +6,47 @@ import { motion } from "framer-motion";
 const clients = [
   {
     name: "OBSERVER",
-    subscribers: "198k Subscribers",
+    subscribers: "198k Followers",
     logo: "/images/clientlogo1.jpeg",
   },
   {
     name: "CANAM STUDYABROAD",
-    subscribers: "282k Subscribers",
+    subscribers: "282k Followers",
     logo: "/images/clientlogo2.png",
   },
   {
-    name: "OWLED",
-    subscribers: "687k Subscribers",
+    name: "OWLED MEDIA",
+    subscribers: "687k Followers",
     logo: "/images/clientlogo3.jpeg",
   },
   {
     name: "GOSOURCE",
-    subscribers: "298k Subscribers",
+    subscribers: "10K Followers",
     logo: "/images/clientlogo4.png",
   },
   {
     name: "BREW MEDIA",
-    subscribers: "2.49M Subscribers",
+    subscribers: "10K Followers",
     logo: "/images/clientlogo5.jpeg",
   },
   {
-    name: "ASTU",
-    subscribers: "150k Subscribers",
+    name: "ASTU JEWELLERY",
+    subscribers: "150k Followers",
     logo: "/images/clientlogo6.png",
   },
   {
-    name: "JOSH TALK",
-    subscribers: "298k Subscribers",
+    name: "TRADE WITH MANISH",
+    subscribers: "173k Followers",
     logo: "/images/clientlogo7.jpeg",
   },
   {
-    name: "CineDesi",
-    subscribers: "2.49M Subscribers",
+    name: "DA CREATION",
+    subscribers: "2.49M Followers",
     logo: "/images/clientlogo8.jpeg",
   },
   {
     name: "ZEAL SPARROW",
-    subscribers: "150k Subscribers",
+    subscribers: "150k Followers",
     logo: "/images/clientlogo9.png",
   },
 ];

@@ -67,13 +67,13 @@ export default function Footer() {
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center">
               <img
-                src="/images/productionlogo2.png"
+                src="/images/productionlogo4.png"
                 alt="K-Media Production"
-                className="w-auto h-14 md:h-40 object-contain"
+                className="w-auto h-20 md:h-10 object-contain object-left mb-8"
               />
             </Link>
 
-            <p className="text-sm text-white/55 leading-7 mt-0 max-w-sm">
+            <p className="text-sm text-white/55 leading-7 mt-2 max-w-sm">
               We turn raw footage into powerful visual stories. From video
               editing to complete channel management, we help brands and
               creators make every frame count.
@@ -81,7 +81,7 @@ export default function Footer() {
 
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 mt-8 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-brand-black transition-all duration-300"
+              className="inline-flex items-center gap-3 mt-7 bg-brand-red text-white px-6 py-3 rounded-full text-sm font-medium hover:bg-white hover:text-brand-black transition-all duration-300"
             >
               Let's create something
               <ArrowUpRight size={17} />
@@ -179,19 +179,19 @@ export default function Footer() {
 
             <div className="flex flex-col gap-4 text-sm text-white/70">
               <a
-                href="mailto:hello@yourdomain.com"
+                href="mailto:production@kodandamedia.com"
                 className="flex items-center gap-3 hover:text-brand-red transition-colors"
               >
                 <Mail size={16} />
-                hello@yourdomain.com
+                production@kodandamedia.com
               </a>
 
               <a
-                href="tel:+91XXXXXXXXXX"
+                href="tel:+7415919006"
                 className="flex items-center gap-3 hover:text-brand-red transition-colors"
               >
                 <Phone size={16} />
-                +91 XXXXX XXXXX
+                +91 74159 19006
               </a>
             </div>
           </div>

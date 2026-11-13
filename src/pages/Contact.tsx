@@ -13,14 +13,14 @@ const contactDetails = [
   {
     icon: Mail,
     label: "EMAIL US",
-    value: "hello@yourdomain.com",
-    href: "mailto:hello@yourdomain.com",
+    value: "production@kodandamedia.com",
+    href: "mailto:production@kodandamedia.com",
   },
   {
     icon: Phone,
     label: "CALL US",
-    value: "+91 XXXXX XXXXX",
-    href: "tel:+91XXXXXXXXXX",
+    value: "+91 74159 19006",
+    href: "tel:+917415919006",
   },
   {
     icon: MapPin,
