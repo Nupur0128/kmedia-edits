@@ -1,5 +1,5 @@
 
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { motion } from "framer-motion";
 
@@ -54,6 +54,32 @@ const clients = [
 export default function Clients() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
+  // Automatic slider movement
+  useEffect(() => {
+    const slider = sliderRef.current;
+    if (!slider) return;
+
+    const interval = setInterval(() => {
+      const maxScroll = slider.scrollWidth - slider.clientWidth;
+
+      if (slider.scrollLeft >= maxScroll - 10) {
+        // Return to the beginning when the slider reaches the end
+        slider.scrollTo({
+          left: 0,
+          behavior: "smooth",
+        });
+      } else {
+        // Move to the next position
+        slider.scrollBy({
+          left: 320,
+          behavior: "smooth",
+        });
+      }
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   const scroll = (direction: "left" | "right") => {
     if (!sliderRef.current) return;
 
@@ -80,7 +106,6 @@ export default function Clients() {
 
       {/* Slider Wrapper */}
       <div className="relative max-w-[1600px] mx-auto px-12 md:px-20">
-
         {/* Left Arrow */}
         <button
           onClick={() => scroll("left")}
@@ -105,7 +130,7 @@ export default function Clients() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
+              transition={{ duration: 0.2, delay: index * 0.02 }}
               className="flex-shrink-0 w-[75%] sm:w-[45%] md:w-[28%] lg:w-[18%] snap-center text-center group"
             >
               {/* Client Logo */}

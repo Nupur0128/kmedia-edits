@@ -13,10 +13,15 @@ import ThumbnailDesigning from "./pages/ThumbnailDesigning";
 import ShortsReelVideoEditing from "./pages/ShortsReelVideoEditing";
 import YouTubeChannelManagement from "./pages/YouTubeChannelManagement";
 import UGCVideoEditing from "./pages/UGCVideoEditing";
+import CustomCursor from "./components/CustomCursor";
+import Preloader from "./components/Preloader";
+import FloatingProjectButton from "./components/FloatingProjectButton";
 
 function App() {
   return (
     <>
+    <CustomCursor />
+    <Preloader />
       <Navbar />
 
       <main>
@@ -54,6 +59,7 @@ function App() {
       </main>
 
       <Footer />
+      <FloatingProjectButton />
     </>
   );
 }

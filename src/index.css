@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600&family=DM+Sans:wght@400;500;600;700&display=swap");
 
 @import "tailwindcss";
 
@@ -8,9 +8,11 @@
   --color-brand-black: #171717;
   --color-brand-white: #F8F7F3;
 
-  --font-display: "Cormorant Garamond", serif;
+  --font-display: "Bodoni Moda", serif;
   --font-body: "DM Sans", sans-serif;
 }
+
+/* Global styles */
 
 * {
   box-sizing: border-box;
@@ -27,7 +29,8 @@ body {
   font-family: "DM Sans", sans-serif;
 }
 
-button, a {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -36,15 +39,75 @@ button, a {
   color: white;
 }
 
-img, video {
+img,
+video {
   max-width: 100%;
 }
 
+/* Editorial typography */
+
 .font-editorial {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Bodoni Moda", serif;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
 }
 
 .font-editorial-italic {
-  font-family: "Cormorant Garamond", serif;
+  font-family: "Bodoni Moda", serif;
   font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+/* Custom K-Media cursor */
+
+.custom-cursor-dot,
+.custom-cursor-ring {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 99999;
+  border-radius: 50%;
+  will-change: transform;
+}
+
+.custom-cursor-dot {
+  width: 7px;
+  height: 7px;
+  background: #E53935;
+}
+
+.custom-cursor-ring {
+  width: 38px;
+  height: 38px;
+  border: 1px solid rgba(229, 57, 53, 0.65);
+  background: rgba(229, 57, 53, 0.04);
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.custom-cursor-ring.cursor-hover {
+  width: 58px;
+  height: 58px;
+  background: rgba(229, 57, 53, 0.12);
+  border-color: #E53935;
+}
+
+@media (pointer: fine) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: block;
+  }
+
+  body,
+  body * {
+    cursor: none !important;
+  }
 }
