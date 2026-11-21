@@ -51,20 +51,33 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 bg-brand-white/95 backdrop-blur-md border-b border-black/10">
-      <nav className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 h-20 flex items-center justify-between">
-        {/* Logo */}
+      <nav className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-10 lg:px-12 min-h-16 sm:min-h-20 flex items-center justify-between gap-3">
+        {/* Responsive Logo */}
         <Link
           to="/"
           onClick={closeMobileMenu}
-          className="shrink-0 flex items-center"
+          className="shrink-0 flex items-center justify-start"
         >
           <img
             src="/images/productionlogo2.png"
             alt="K-Media Production"
-            className="w-auto h-8 sm:h-9 md:h-24 max-h-12 object-contain"
+            className="
+      block
+      w-auto
+      h-9
+      sm:h-10
+      md:h-12
+      lg:h-14
+      xl:h-16
+      max-w-[150px]
+      sm:max-w-[180px]
+      md:max-w-[200px]
+      lg:max-w-[220px]
+      object-contain
+      object-left
+    "
           />
         </Link>
-
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-10">
           <NavLink to="/" end className={navClass}>
