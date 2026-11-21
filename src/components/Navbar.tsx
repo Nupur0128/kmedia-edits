@@ -61,12 +61,12 @@ export default function Navbar() {
           <img
             src="/images/productionlogo2.png"
             alt="K-Media Production"
-            className="w-auto h-8 sm:h-9 md:h-24 max-h-12 object-contain"
+            className="w-auto h-6 sm:h-10 md:h-11 lg:h-8 object-contain"
           />
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-6 lg:gap-10">
           <NavLink to="/" end className={navClass}>
             Home
           </NavLink>
@@ -159,7 +159,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <Link
           to="/contact"
-          className="hidden md:flex items-center gap-2 bg-brand-black text-white px-5 py-3 rounded-full text-sm hover:bg-brand-red transition-colors"
+          className="hidden md:flex items-center gap-2 bg-brand-black text-white px-4 py-2.5 lg:px-5 lg:py-3 rounded-full text-xs lg:text-sm hover:bg-brand-red transition-colors"
         >
           Start a Project
           <ArrowUpRight size={16} />
@@ -167,18 +167,18 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden"
+          className="md:hidden p-2 text-brand-black hover:text-brand-red transition-colors"
           onClick={() => setMenuOpen(!menuOpen)}
           aria-label="Toggle navigation"
           aria-expanded={menuOpen}
         >
-          {menuOpen ? <X size={25} /> : <Menu size={25} />}
+          {menuOpen ? <X size={26} /> : <Menu size={26} />}
         </button>
       </nav>
 
       {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="md:hidden bg-brand-white px-6 py-6 border-t border-black/10">
+        <div className="md:hidden bg-brand-white px-6 py-6 border-t border-black/10 max-h-[calc(100vh-5rem)] overflow-y-auto">
           <div className="flex flex-col gap-5">
             <NavLink
               to="/"

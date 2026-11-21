@@ -62,14 +62,14 @@ export default function Footer() {
     <footer className="bg-brand-black text-white px-5 sm:px-6 md:px-12 pt-16 pb-8 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         {/* Top Footer */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-8 md:gap-12 pb-12 md:pb-16">
           {/* Brand Information */}
           <div className="lg:col-span-4">
             <Link to="/" className="inline-flex items-center">
               <img
                 src="/images/productionlogo4.png"
                 alt="K-Media Production"
-                className="w-auto h-8 sm:h-9 md:h-11 max-w-[220px] object-contain object-left mb-6"
+                className="w-auto h-9 sm:h-10 md:h-11 lg:h-12 max-w-[240px] object-contain object-left mb-6"
               />
             </Link>
 
