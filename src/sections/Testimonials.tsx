@@ -86,7 +86,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-brand-white px-6 md:px-12 py-20 md:py-28">
+    <section className="bg-brand-white px-5 sm:px-6 md:px-12 py-20 md:py-28 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         <div className="flex items-center justify-center gap-3 mb-8">
           <span className="bg-brand-black text-white rounded-full px-4 py-2 text-[10px] tracking-widest">
@@ -108,7 +108,7 @@ export default function Testimonials() {
             “
           </span>
 
-          <h2 className="font-editorial text-4xl sm:text-5xl md:text-7xl lg:text-[82px] leading-[1.12] tracking-tight text-brand-black max-w-[1350px] mx-auto">
+          <h2 className="font-editorial text-3xl sm:text-5xl md:text-7xl lg:text-[82px] leading-[1.15] tracking-tight text-brand-black max-w-[1350px] mx-auto">
             {current.before}{" "}
             <span className="font-editorial-italic relative inline text-brand-black px-1">
               <span className="relative z-10">

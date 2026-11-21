@@ -59,7 +59,7 @@ const socialLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-black text-white px-6 md:px-12 pt-16 pb-8">
+    <footer className="bg-brand-black text-white px-5 sm:px-6 md:px-12 pt-16 pb-8 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
         {/* Top Footer */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12 pb-16">
@@ -69,7 +69,7 @@ export default function Footer() {
               <img
                 src="/images/productionlogo4.png"
                 alt="K-Media Production"
-                className="w-auto h-20 md:h-10 object-contain object-left mb-8"
+                className="w-auto h-8 sm:h-9 md:h-11 max-w-[220px] object-contain object-left mb-6"
               />
             </Link>
 

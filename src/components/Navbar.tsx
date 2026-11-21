@@ -46,13 +46,12 @@ export default function Navbar() {
   };
 
   const navClass = ({ isActive }: { isActive: boolean }) =>
-    `text-sm transition-colors ${
-      isActive ? "text-brand-red" : "text-brand-black hover:text-brand-red"
+    `text-sm transition-colors ${isActive ? "text-brand-red" : "text-brand-black hover:text-brand-red"
     }`;
 
   return (
     <header className="sticky top-0 z-50 bg-brand-white/95 backdrop-blur-md border-b border-black/10">
-      <nav className="max-w-[1440px] mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
+      <nav className="max-w-[1440px] mx-auto px-4 sm:px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
         <Link
           to="/"
@@ -62,7 +61,7 @@ export default function Navbar() {
           <img
             src="/images/productionlogo2.png"
             alt="K-Media Production"
-            className="w-auto h-12 md:h-40 object-contain"
+            className="w-auto h-8 sm:h-9 md:h-24 max-h-12 object-contain"
           />
         </Link>
 
@@ -88,10 +87,9 @@ export default function Navbar() {
                 to="/services"
                 end
                 className={({ isActive }) =>
-                  `text-sm transition-colors ${
-                    isActive || location.pathname.startsWith("/services/")
-                      ? "text-brand-red"
-                      : "text-brand-black hover:text-brand-red"
+                  `text-sm transition-colors ${isActive || location.pathname.startsWith("/services/")
+                    ? "text-brand-red"
+                    : "text-brand-black hover:text-brand-red"
                   }`
                 }
               >
@@ -109,9 +107,8 @@ export default function Navbar() {
               >
                 <ChevronDown
                   size={17}
-                  className={`transition-transform duration-300 ${
-                    servicesOpen ? "rotate-180" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
             </div>
@@ -126,11 +123,10 @@ export default function Navbar() {
       border border-black/5
       py-2
       transition-all duration-300
-      ${
-        servicesOpen
-          ? "visible opacity-100 translate-y-0"
-          : "invisible opacity-0 translate-y-2"
-      }
+      ${servicesOpen
+                  ? "visible opacity-100 translate-y-0"
+                  : "invisible opacity-0 translate-y-2"
+                }
     `}
             >
               {services.map((service) => (
@@ -139,10 +135,9 @@ export default function Navbar() {
                   to={service.path}
                   onClick={() => setServicesOpen(false)}
                   className={({ isActive }) =>
-                    `block px-8 py-4 text-[15px] transition-all duration-200 ${
-                      isActive
-                        ? "text-brand-red bg-black/[0.03]"
-                        : "text-brand-black hover:text-brand-red hover:bg-black/[0.03]"
+                    `block px-8 py-4 text-[15px] transition-all duration-200 ${isActive
+                      ? "text-brand-red bg-black/[0.03]"
+                      : "text-brand-black hover:text-brand-red hover:bg-black/[0.03]"
                     }`
                   }
                 >
@@ -225,9 +220,8 @@ export default function Navbar() {
                 >
                   <ChevronDown
                     size={20}
-                    className={`transition-transform duration-300 ${
-                      servicesOpen ? "rotate-180" : ""
-                    }`}
+                    className={`transition-transform duration-300 ${servicesOpen ? "rotate-180" : ""
+                      }`}
                   />
                 </button>
               </div>
@@ -241,10 +235,9 @@ export default function Navbar() {
                       to={service.path}
                       onClick={closeMobileMenu}
                       className={({ isActive }) =>
-                        `text-sm transition-colors ${
-                          isActive
-                            ? "text-brand-red"
-                            : "text-black/70 hover:text-brand-red"
+                        `text-sm transition-colors ${isActive
+                          ? "text-brand-red"
+                          : "text-black/70 hover:text-brand-red"
                         }`
                       }
                     >

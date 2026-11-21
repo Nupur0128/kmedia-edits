@@ -105,14 +105,14 @@ export default function Clients() {
       </motion.div>
 
       {/* Slider Wrapper */}
-      <div className="relative max-w-[1600px] mx-auto px-12 md:px-20">
+      <div className="relative max-w-[1600px] mx-auto px-8 sm:px-12 md:px-20">
         {/* Left Arrow */}
         <button
           onClick={() => scroll("left")}
           aria-label="Previous clients"
-          className="absolute left-1 md:left-5 top-[25%] -translate-y-1/2 z-20 text-white hover:scale-110 transition-transform"
+          className="absolute left-1 md:left-5 top-[25%] -translate-y-1/2 z-20 text-white hover:scale-110 transition-transform p-1"
         >
-          <ChevronLeft size={65} strokeWidth={1.5} />
+          <ChevronLeft className="w-8 h-8 md:w-14 md:h-14" strokeWidth={1.5} />
         </button>
 
         {/* Client Cards Slider */}
@@ -161,9 +161,9 @@ export default function Clients() {
         <button
           onClick={() => scroll("right")}
           aria-label="Next clients"
-          className="absolute right-1 md:right-5 top-[25%] -translate-y-1/2 z-20 text-white hover:scale-110 transition-transform"
+          className="absolute right-1 md:right-5 top-[25%] -translate-y-1/2 z-20 text-white hover:scale-110 transition-transform p-1"
         >
-          <ChevronRight size={65} strokeWidth={1.5} />
+          <ChevronRight className="w-8 h-8 md:w-14 md:h-14" strokeWidth={1.5} />
         </button>
       </div>
     </section>

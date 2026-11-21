@@ -49,7 +49,7 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-[#F0EEE8] px-6 md:px-12 py-24 md:py-32">
+    <section className="bg-[#F0EEE8] px-5 sm:px-6 md:px-12 py-20 md:py-32 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
 
         <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-16 lg:gap-24">
@@ -102,11 +102,11 @@ export default function Process() {
                 return (
                   <motion.article
                     key={step.number}
-                    initial={{ opacity: 0, x: 40 }}
-                    whileInView={{ opacity: 1, x: 0 }}
+                    initial={{ opacity: 0, y: 25 }}
+                    whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className="relative pl-20"
+                    className="relative pl-16 sm:pl-20"
                   >
                     <div className="absolute left-0 top-7 w-14 h-14 rounded-full bg-brand-white border border-black/10 flex items-center justify-center z-10 shadow-sm">
                       <Icon size={21} className="text-brand-red" />

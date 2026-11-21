@@ -14,17 +14,17 @@ import ShortsReelVideoEditing from "./pages/ShortsReelVideoEditing";
 import YouTubeChannelManagement from "./pages/YouTubeChannelManagement";
 import UGCVideoEditing from "./pages/UGCVideoEditing";
 import CustomCursor from "./components/CustomCursor";
-import Preloader from "./components/Preloader";
+// import Preloader from "./components/Preloader";
 import FloatingProjectButton from "./components/FloatingProjectButton";
 
 function App() {
   return (
     <>
-    <CustomCursor />
-    <Preloader />
+      <CustomCursor />
+      {/* <Preloader /> */}
       <Navbar />
 
-      <main>
+      <main className="overflow-x-hidden w-full flex-1">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -43,9 +43,9 @@ function App() {
             path="/UGC-video-editing"
             element={<UGCVideoEditing />}
           />
-          <Route 
-          path="/thumbnail-designing" 
-          element={<ThumbnailDesigning />} 
+          <Route
+            path="/thumbnail-designing"
+            element={<ThumbnailDesigning />}
           />
           <Route
             path="/short-form-video-editing"

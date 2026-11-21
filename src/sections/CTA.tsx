@@ -18,7 +18,7 @@ export default function CTA() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="font-editorial text-6xl sm:text-7xl md:text-8xl lg:text-[120px] leading-[0.9] max-w-6xl"
+          className="font-editorial text-4xl sm:text-6xl md:text-8xl lg:text-[120px] leading-[0.95] max-w-6xl break-words"
         >
           Got footage?
           <br />

@@ -80,7 +80,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="bg-brand-white px-6 md:px-12 py-24 md:py-32">
+    <section className="bg-brand-white px-5 sm:px-6 md:px-12 py-20 md:py-32 overflow-hidden">
       <div className="max-w-[1440px] mx-auto">
 
         <div className="flex flex-col md:flex-row justify-between md:items-end gap-6 mb-16">
@@ -89,7 +89,7 @@ export default function Services() {
               02 / WHAT WE DO
             </p>
 
-            <h2 className="font-editorial text-6xl md:text-8xl leading-[0.9]">
+            <h2 className="font-editorial text-4xl sm:text-6xl md:text-8xl leading-[0.92]">
               Creative work.
               <br />
               <span className="font-editorial-italic text-brand-red">

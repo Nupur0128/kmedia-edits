@@ -68,7 +68,7 @@ export default function Hero() {
               worth watching.
             </span>
           </h1>
-          
+
 
           <p className="max-w-xl mx-auto text-sm md:text-base text-black/60 leading-7 mt-4">
             From scroll-stopping reels to cinematic brand films,
