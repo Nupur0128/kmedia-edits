@@ -71,7 +71,7 @@ export default function Showreel() {
           <iframe
             src={`https://drive.google.com/file/d/${videoId}/preview`}
             title="K-Media Production Showreel"
-            className="absolute inset-0 w-full h-full border-0"
+            className="video-iframe-responsive"
             allow="autoplay; fullscreen"
             allowFullScreen
           />

@@ -9,7 +9,7 @@ export default function FloatingProjectButton() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.7, delay: 0.5 }}
-      className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-[1000]"
+      className="fixed bottom-2 right-2 md:bottom-6 md:right-6 z-[1000]"
     >
       <motion.div
         whileHover="hover"

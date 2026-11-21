@@ -55,6 +55,34 @@ video {
   max-width: 100%;
 }
 
+/* Responsive video iframe scaling for small & mobile devices */
+.video-iframe-responsive {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .video-iframe-responsive {
+    width: 150% !important;
+    height: 150% !important;
+    transform: scale(0.666667) !important;
+    transform-origin: top left !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .video-iframe-responsive {
+    width: 175% !important;
+    height: 175% !important;
+    transform: scale(0.571428) !important;
+    transform-origin: top left !important;
+  }
+}
+
 /* Editorial typography */
 
 .font-editorial {

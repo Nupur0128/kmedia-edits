@@ -347,7 +347,7 @@ export default function Portfolio() {
                       <iframe
                         src={`https://drive.google.com/file/d/${project.videoId}/preview`}
                         title={project.title}
-                        className="absolute inset-0 w-full h-full border-0"
+                        className="video-iframe-responsive"
                         allow="autoplay; fullscreen"
                         allowFullScreen
                         loading="lazy"
@@ -435,13 +435,13 @@ export default function Portfolio() {
               onClick={(e) => e.stopPropagation()}
               className="max-w-5xl w-full max-h-[90vh] overflow-y-auto"
             >
-              <div className="bg-[#171717] w-full aspect-video">
+              <div className="relative bg-[#171717] w-full aspect-video overflow-hidden">
                 {selectedProject.videoId ? (
                   <iframe
                     key={selectedProject.id}
                     src={`https://drive.google.com/file/d/${selectedProject.videoId}/preview`}
                     title={selectedProject.title}
-                    className="w-full h-full border-0"
+                    className="video-iframe-responsive"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                   />

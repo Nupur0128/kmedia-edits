@@ -445,7 +445,7 @@ export default function ShortsReelVideoEditing() {
                     <iframe
                       src={`https://drive.google.com/file/d/${item.videoId}/preview`}
                       title={item.title}
-                      className="absolute inset-0 w-full h-full border-0"
+                      className="video-iframe-responsive"
                       allow="autoplay; fullscreen"
                       allowFullScreen
                     />
@@ -466,11 +466,16 @@ export default function ShortsReelVideoEditing() {
                       <div className="absolute inset-0 bg-black/20 group-hover:bg-black/35 transition-colors" />
 
                       <div className="absolute inset-0 flex items-center justify-center">
-                        <span className="w-14 h-14 rounded-full bg-brand-red text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                        <span className="w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-brand-red text-white flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform duration-300">
+                          <Play
+                            size={18}
+                            fill="currentColor"
+                            className="ml-0.5 sm:hidden"
+                          />
                           <Play
                             size={23}
                             fill="currentColor"
-                            className="ml-1"
+                            className="ml-1 hidden sm:block"
                           />
                         </span>
                       </div>

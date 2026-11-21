@@ -482,7 +482,7 @@ export default function UGCVideoEditing() {
                       title={item.title}
                       allow="autoplay; fullscreen"
                       allowFullScreen
-                      className="absolute inset-0 w-full h-full border-0"
+                      className="video-iframe-responsive"
                     />
 
                     {/* VIDEO OVERLAY */}
@@ -499,11 +499,15 @@ export default function UGCVideoEditing() {
                       onClick={() => handleVideoSound(item.id)}
                       aria-label={isUnmuted ? "Mute video" : "Unmute video"}
                       aria-pressed={isUnmuted}
-                      className="absolute bottom-4 right-4 z-20 w-11 h-11 rounded-full bg-brand-red text-white flex items-center justify-center hover:bg-white hover:text-brand-red transition-all duration-300 shadow-lg"
+                      className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 w-8 h-8 sm:w-11 sm:h-11 rounded-full bg-brand-red text-white flex items-center justify-center hover:bg-white hover:text-brand-red transition-all duration-300 shadow-lg"
                     >
                       <Volume2
+                        size={15}
+                        className={`sm:hidden ${!isUnmuted ? "opacity-60" : ""}`}
+                      />
+                      <Volume2
                         size={19}
-                        className={!isUnmuted ? "opacity-60" : ""}
+                        className={`hidden sm:block ${!isUnmuted ? "opacity-60" : ""}`}
                       />
                     </button>
 

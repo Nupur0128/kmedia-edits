@@ -566,7 +566,7 @@ export default function PodcastVideoEditing() {
                   <iframe
                     src={`https://drive.google.com/file/d/${item.videoId}/preview`}
                     title={item.title}
-                    className="w-full h-full border-0"
+                    className="video-iframe-responsive"
                     allow="autoplay; fullscreen"
                     allowFullScreen
                     loading="lazy"
