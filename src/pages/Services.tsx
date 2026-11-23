@@ -112,11 +112,10 @@ function ServiceGallery({
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35 }}
-              className={`relative overflow-hidden rounded-[28px] bg-black ${
-                vertical
+              className={`relative overflow-hidden rounded-[28px] bg-black ${vertical
                   ? "w-1/2 aspect-[3/5] max-w-[230px]"
                   : "w-full aspect-[16/9]"
-              }`}
+                }`}
             >
               <img
                 src={image.src}
@@ -160,11 +159,10 @@ function ServiceGallery({
             type="button"
             onClick={() => setActive(index)}
             aria-label={`Go to image ${index + 1}`}
-            className={`h-2 rounded-full transition-all duration-300 ${
-              active === index
+            className={`h-2 rounded-full transition-all duration-300 ${active === index
                 ? "w-7 bg-brand-red"
                 : "w-2 bg-black/20 hover:bg-black/50"
-            }`}
+              }`}
           />
         ))}
       </div>
@@ -204,9 +202,8 @@ function ServiceSection({
       className="relative overflow-hidden rounded-[32px] md:rounded-[48px] bg-[#FFF0F0] border border-brand-red/10 px-6 py-12 sm:px-10 md:px-16 lg:px-20 md:py-20"
     >
       <div
-        className={`max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-20 ${
-          reverse ? "lg:[&>*:first-child]:order-2" : ""
-        }`}
+        className={`max-w-[1440px] mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-10 lg:gap-20 ${reverse ? "lg:[&>*:first-child]:order-2" : ""
+          }`}
       >
         {/* Image Gallery */}
 
@@ -473,10 +470,10 @@ export default function Services() {
                     LET'S MAKE SOMETHING GREAT
                   </p>
                   <a
-                    href="mailto:info@kodandamedia.com"
+                    href="mailto:production@kodandamedia.com"
                     className="text-base md:text-lg font-semibold text-brand-black hover:text-brand-red transition-colors"
                   >
-                    info@kodandamedia.com
+                    production@kodandamedia.com
                   </a>
                 </div>
               </div>
@@ -492,10 +489,10 @@ export default function Services() {
                     LET'S TALK
                   </p>
                   <a
-                    href="tel:+918085082069"
+                    href="tel:+917415919006"
                     className="text-base md:text-lg font-semibold text-brand-black hover:text-brand-red transition-colors"
                   >
-                    +91 80850 82069
+                    +91 74159 19006
                   </a>
                 </div>
               </div>
@@ -613,11 +610,10 @@ export default function Services() {
                         type="button"
                         onClick={() => toggleService(service)}
                         aria-pressed={selected}
-                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 ${
-                          selected
+                        className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-full border text-xs sm:text-sm font-semibold transition-all duration-300 ${selected
                             ? "bg-brand-red border-brand-red text-white"
                             : "bg-white border-black/25 text-brand-black hover:border-brand-red hover:text-brand-red"
-                        }`}
+                          }`}
                       >
                         {selected && <Check size={14} />}
                         {service}

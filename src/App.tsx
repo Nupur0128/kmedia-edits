@@ -13,6 +13,8 @@ import ThumbnailDesigning from "./pages/ThumbnailDesigning";
 import ShortsReelVideoEditing from "./pages/ShortsReelVideoEditing";
 import YouTubeChannelManagement from "./pages/YouTubeChannelManagement";
 import UGCVideoEditing from "./pages/UGCVideoEditing";
+import TermsAndConditions from "./pages/TermsAndConditions";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
 import CustomCursor from "./components/CustomCursor";
 // import Preloader from "./components/Preloader";
 import FloatingProjectButton from "./components/FloatingProjectButton";
@@ -55,6 +57,15 @@ function App() {
             path="/youtube-channel-management"
             element={<YouTubeChannelManagement />}
           />
+          <Route
+            path="/terms-and-conditions"
+            element={<TermsAndConditions />}
+          />
+          <Route
+            path="/privacy-policy"
+            element={<PrivacyPolicy />}
+          />
+          <Route path="*" element={<Home />} />
         </Routes>
       </main>
 

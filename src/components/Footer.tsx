@@ -38,22 +38,22 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: FaInstagram,
-    url: "https://www.instagram.com/",
+    url: "#",
   },
   {
     name: "YouTube",
     icon: FaYoutube,
-    url: "https://www.youtube.com/",
+    url: "#",
   },
   {
     name: "Facebook",
     icon: FaFacebookF,
-    url: "https://www.facebook.com/",
+    url: "#",
   },
   {
     name: "LinkedIn",
     icon: FaLinkedinIn,
-    url: "https://www.linkedin.com/",
+    url: "#",
   },
 ];
 

@@ -1,5 +1,6 @@
 
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowUpRight,
   Clapperboard,
@@ -287,13 +288,13 @@ export default function About() {
                     {service.description}
                   </p>
 
-                  <a
-                    href="/services/short-form-video-editing"
+                  <Link
+                    to="/short-form-video-editing"
                     className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest mt-7 uppercase hover:text-brand-red transition-colors"
                   >
                     Explore services
                     <ArrowUpRight size={15} />
-                  </a>
+                  </Link>
                 </motion.div>
               );
             })}
@@ -421,8 +422,8 @@ export default function About() {
               </span>
             </h2>
 
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="group inline-flex items-center justify-center gap-6 bg-brand-red text-white px-8 py-5 text-xs font-semibold tracking-[0.15em] hover:bg-white hover:text-brand-black transition-colors w-fit"
             >
               LET'S WORK TOGETHER
@@ -430,7 +431,7 @@ export default function About() {
                 size={19}
                 className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

@@ -93,7 +93,7 @@ Project Details:
 ${formData.message}
     `);
 
-    window.location.href = `mailto:hello@yourdomain.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:production@kodandamedia.com?subject=${subject}&body=${body}`;
   };
 
   return (
@@ -246,7 +246,9 @@ ${formData.message}
 
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.instagram.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="Instagram"
                   className="w-12 h-12 border border-brand-black/20 rounded-full flex items-center justify-center text-sm font-bold hover:bg-brand-red hover:border-brand-red hover:text-white transition-all"
                 >
@@ -254,7 +256,9 @@ ${formData.message}
                 </a>
 
                 <a
-                  href="#"
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="LinkedIn"
                   className="w-12 h-12 border border-brand-black/20 rounded-full flex items-center justify-center text-sm font-bold hover:bg-brand-red hover:border-brand-red hover:text-white transition-all"
                 >
@@ -445,7 +449,7 @@ ${formData.message}
           </div>
 
           <a
-            href="mailto:hello@yourdomain.com"
+            href="mailto:production@kodandamedia.com"
             className="group inline-flex items-center gap-5 border-b border-white pb-3 text-sm font-semibold tracking-wider w-fit hover:text-white/70 transition-colors"
           >
             SAY HELLO
