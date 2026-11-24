@@ -49,12 +49,14 @@ const steps = [
 
 export default function Process() {
   return (
-    <section className="bg-[#F0EEE8] px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-32 overflow-hidden">
+    <section className="bg-[#F0EEE8] px-4 sm:px-6 md:px-12 py-16 sm:py-20 md:py-32">
       <div className="max-w-[1440px] mx-auto">
 
-        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24">
+        <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 lg:gap-24 items-start">
 
-          <div className="lg:sticky lg:top-32 lg:self-start">
+          {/* LEFT STICKY SECTION */}
+          <div className="lg:sticky lg:top-28 lg:h-[calc(100vh-7rem)] lg:flex lg:flex-col lg:justify-center lg:self-start">
+
             <p className="text-brand-red text-xs tracking-[0.3em] mb-4 sm:mb-7">
               05 / OUR PROCESS
             </p>
@@ -76,48 +78,81 @@ export default function Process() {
             </p>
 
             <div className="flex gap-3 mt-6 sm:mt-9">
+
               <div className="bg-white border border-black/10 rounded-xl p-4 sm:p-5 flex-1 sm:flex-initial">
-                <p className="font-editorial text-2xl sm:text-3xl">01—04</p>
+                <p className="font-editorial text-2xl sm:text-3xl">
+                  01—04
+                </p>
                 <p className="text-[8px] sm:text-[9px] tracking-widest text-black/50 mt-1">
                   CLEAR STEPS
                 </p>
               </div>
 
               <div className="bg-white border border-black/10 rounded-xl p-4 sm:p-5 flex-1 sm:flex-initial">
-                <p className="font-editorial text-2xl sm:text-3xl">100%</p>
+                <p className="font-editorial text-2xl sm:text-3xl">
+                  100%
+                </p>
                 <p className="text-[8px] sm:text-[9px] tracking-widest text-black/50 mt-1">
                   CREATIVE FOCUS
                 </p>
               </div>
+
             </div>
           </div>
 
+          {/* RIGHT SCROLLING SECTION */}
           <div className="relative">
+
+            {/* Timeline */}
             <div className="absolute left-5 sm:left-7 top-6 sm:top-10 bottom-6 sm:bottom-10 w-px bg-brand-red/30" />
 
-            <div className="space-y-4 sm:space-y-5">
+            <div className="space-y-6 sm:space-y-8">
+
               {steps.map((step, index) => {
                 const Icon = step.icon;
 
                 return (
                   <motion.article
                     key={step.number}
-                    initial={{ opacity: 0, y: 25 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.2 }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                    initial={{
+                      opacity: 0,
+                      y: 60,
+                    }}
+                    whileInView={{
+                      opacity: 1,
+                      y: 0,
+                    }}
+                    viewport={{
+                      once: true,
+                      amount: 0.2,
+                    }}
+                    transition={{
+                      duration: 0.75,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
                     className="relative pl-12 sm:pl-20"
                   >
-                    <div className="absolute left-0 top-5 sm:top-7 w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-brand-white border border-black/10 flex items-center justify-center z-10 shadow-sm">
-                      <Icon size={18} className="text-brand-red sm:hidden" />
-                      <Icon size={21} className="text-brand-red hidden sm:block" />
+
+                    {/* Timeline Icon */}
+                    <div className="absolute left-0 top-5 sm:top-7 w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white border border-black/10 flex items-center justify-center z-10 shadow-sm">
+                      <Icon
+                        size={18}
+                        className="text-brand-red sm:hidden"
+                      />
+                      <Icon
+                        size={21}
+                        className="text-brand-red hidden sm:block"
+                      />
                     </div>
 
+                    {/* Process Card */}
                     <div className="bg-white border border-black/10 rounded-2xl p-4 sm:p-6 md:p-9 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+
                       <div className="flex justify-between items-center gap-2 sm:gap-3">
                         <span className="text-[9px] sm:text-[10px] tracking-[0.2em] text-brand-red font-medium">
                           {step.day}
                         </span>
+
                         <span className="font-editorial text-2xl sm:text-4xl text-black/10">
                           {step.number}
                         </span>
@@ -135,10 +170,12 @@ export default function Process() {
                         <Check size={13} className="text-brand-red" />
                         {step.tag}
                       </div>
+
                     </div>
                   </motion.article>
                 );
               })}
+
             </div>
           </div>
 
