@@ -7,7 +7,7 @@ const clients = [
   {
     name: "OBSERVER",
     subscribers: "198k Followers",
-    logo: "/images/clientlogo1.jpeg",
+    logo: "/images/clientlogo1.png",
   },
   {
     name: "CANAM STUDYABROAD",
@@ -17,7 +17,7 @@ const clients = [
   {
     name: "OWLED MEDIA",
     subscribers: "687k Followers",
-    logo: "/images/clientlogo3.jpeg",
+    logo: "/images/clientlogo3.png",
   },
   {
     name: "GOSOURCE",
@@ -27,7 +27,7 @@ const clients = [
   {
     name: "BREW MEDIA",
     subscribers: "10K Followers",
-    logo: "/images/clientlogo5.jpeg",
+    logo: "/images/clientlogo5.png",
   },
   {
     name: "ASTU JEWELLERY",
@@ -90,7 +90,7 @@ export default function Clients() {
   };
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-r from-[#A9002D] via-[#C00024] to-[#ED001B] py-20 md:py-28">
+    <section className="relative overflow-hidden bg-brand-red py-20 md:py-28">
       {/* Heading */}
       <motion.div
         initial={{ opacity: 0 }}
