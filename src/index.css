@@ -117,47 +117,51 @@ video {
 .custom-cursor-dot {
   width: 7px;
   height: 7px;
-  background: #E53935;
+  background-color: #E53935;
+  box-shadow: 0 0 4px rgba(229, 57, 53, 0.3);
   transition:
-    background-color 0.25s ease,
-    box-shadow 0.25s ease,
-    opacity 0.2s ease;
+    background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
 }
 
 .custom-cursor-dot.cursor-dark {
-  background: #FFFFFF;
+  background-color: #FFFFFF;
   box-shadow: 0 0 10px rgba(255, 255, 255, 0.9), 0 0 2px rgba(0, 0, 0, 0.4);
 }
 
 .custom-cursor-ring {
   width: 38px;
   height: 38px;
-  border: 1px solid rgba(229, 57, 53, 0.65);
-  background: rgba(229, 57, 53, 0.04);
+  border-width: 1px;
+  border-style: solid;
+  border-color: rgba(229, 57, 53, 0.65);
+  background-color: rgba(229, 57, 53, 0.04);
+  box-shadow: 0 0 0px transparent;
   transition:
-    width 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    height 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    background 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease,
-    opacity 0.2s ease;
+    width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 0.25s ease;
 }
 
 .custom-cursor-ring.cursor-dark {
   border-color: rgba(255, 255, 255, 0.85);
-  background: rgba(255, 255, 255, 0.08);
+  background-color: rgba(255, 255, 255, 0.08);
   box-shadow: 0 0 14px rgba(255, 255, 255, 0.15);
 }
 
 .custom-cursor-ring.cursor-hover {
   width: 58px;
   height: 58px;
-  background: rgba(229, 57, 53, 0.12);
+  background-color: rgba(229, 57, 53, 0.12);
   border-color: #E53935;
 }
 
 .custom-cursor-ring.cursor-hover.cursor-dark {
-  background: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.2);
   border-color: #FFFFFF;
   box-shadow: 0 0 20px rgba(255, 255, 255, 0.25);
 }

@@ -1,20 +1,26 @@
 import { useEffect, useRef } from "react";
 
+let lastCheckedElement: HTMLElement | null = null;
+let lastDarkResult: boolean = false;
+
 function isDarkBackground(target: HTMLElement | null): boolean {
   if (!target) return false;
+  if (target === lastCheckedElement) return lastDarkResult;
 
+  lastCheckedElement = target;
   let el: HTMLElement | null = target;
   let depth = 0;
+  let result = false;
 
   while (el && el !== document.documentElement && depth < 10) {
     depth++;
 
-    // 1. Direct class check for dark, red, or dark gradient background classes
     const className =
       typeof el.className === "string"
         ? el.className
         : (el.className as unknown as { baseVal?: string })?.baseVal || "";
 
+    // 1. Direct class check for dark, red, or dark gradient background classes
     if (
       /(bg-brand-black|bg-black|bg-brand-red|from-black|to-black|dark-bg|bg-\[#1|bg-\[#0|bg-\[#2|bg-zinc-9|bg-neutral-9|bg-gray-9)/i.test(
         className
@@ -22,7 +28,8 @@ function isDarkBackground(target: HTMLElement | null): boolean {
       el.getAttribute("data-theme") === "dark" ||
       el.getAttribute("data-bg") === "dark"
     ) {
-      return true;
+      result = true;
+      break;
     }
 
     // 2. Images, video, canvas, iframes in media cards
@@ -31,7 +38,8 @@ function isDarkBackground(target: HTMLElement | null): boolean {
       el.tagName === "VIDEO" ||
       el.tagName === "IFRAME"
     ) {
-      return true;
+      result = true;
+      break;
     }
 
     // 3. Elements with explicit white text usually indicate a dark parent/container
@@ -39,7 +47,8 @@ function isDarkBackground(target: HTMLElement | null): boolean {
       className.includes("text-white") ||
       className.includes("text-brand-white")
     ) {
-      return true;
+      result = true;
+      break;
     }
 
     // 4. Computed background-color check
@@ -65,11 +74,13 @@ function isDarkBackground(target: HTMLElement | null): boolean {
           const isRed = r > 160 && g < 100 && b < 100;
 
           if (luminance < 0.45 || isRed) {
-            return true;
+            result = true;
+            break;
           }
           if (luminance > 0.6) {
             // Definitively light background
-            return false;
+            result = false;
+            break;
           }
         }
       }
@@ -78,7 +89,8 @@ function isDarkBackground(target: HTMLElement | null): boolean {
     el = el.parentElement;
   }
 
-  return false;
+  lastDarkResult = result;
+  return result;
 }
 
 export default function CustomCursor() {
@@ -86,17 +98,28 @@ export default function CustomCursor() {
   const ringRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const updateCursorState = (target: HTMLElement | null) => {
-      if (!target) return;
+    let rafId: number | null = null;
+    let pendingTarget: HTMLElement | null = null;
 
-      const isClickable = target.closest(
-        "a, button, [role='button'], input, textarea, select"
+    const applyState = () => {
+      rafId = null;
+      if (!pendingTarget) return;
+
+      const isClickable = Boolean(
+        pendingTarget.closest("a, button, [role='button'], input, textarea, select")
       );
-      ringRef.current?.classList.toggle("cursor-hover", Boolean(isClickable));
+      ringRef.current?.classList.toggle("cursor-hover", isClickable);
 
-      const isDark = isDarkBackground(target);
+      const isDark = isDarkBackground(pendingTarget);
       dotRef.current?.classList.toggle("cursor-dark", isDark);
       ringRef.current?.classList.toggle("cursor-dark", isDark);
+    };
+
+    const scheduleUpdate = (target: HTMLElement | null) => {
+      pendingTarget = target;
+      if (!rafId) {
+        rafId = requestAnimationFrame(applyState);
+      }
     };
 
     const moveCursor = (e: PointerEvent) => {
@@ -112,11 +135,11 @@ export default function CustomCursor() {
           `translate3d(${clientX}px, ${clientY}px, 0) translate(-50%, -50%)`;
       }
 
-      updateCursorState(e.target as HTMLElement);
+      scheduleUpdate(e.target as HTMLElement);
     };
 
     const handlePointerOver = (e: PointerEvent) => {
-      updateCursorState(e.target as HTMLElement);
+      scheduleUpdate(e.target as HTMLElement);
     };
 
     const handlePointerLeave = () => {
@@ -135,6 +158,7 @@ export default function CustomCursor() {
     document.documentElement.addEventListener("pointerenter", handlePointerEnter);
 
     return () => {
+      if (rafId) cancelAnimationFrame(rafId);
       document.removeEventListener("pointermove", moveCursor);
       document.removeEventListener("pointerover", handlePointerOver);
       document.documentElement.removeEventListener("pointerleave", handlePointerLeave);
