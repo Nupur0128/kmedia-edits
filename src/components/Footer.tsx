@@ -38,7 +38,7 @@ const socialLinks = [
   {
     name: "Instagram",
     icon: FaInstagram,
-    url: "#",
+    url: "https://www.instagram.com/kmedia.production?gwpx=MXB0NjlidXN0dXFvMA%3D%3D",
   },
   {
     name: "YouTube",
